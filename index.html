@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Delwest — Portfolio Weekly Snapshot</title>
@@ -114,18 +115,18 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><h3>Stabilized Occupancy — Trailing 12 Months</h3><div class="ph">Unit-weighted occupancy across the 7 stabilized communities (excludes The Vista, in lease-up). Dashed segment projects 7/7 and 7/28 from scheduled move-ins and notices.</div><div class="chart-box"><canvas id="portocc"></canvas></div></div>
   <div class="tag">Community Leaderboard · Ranked by Occupancy</div>
   <div class="lbl-head">Market-rate communities</div>
-  <table class="ptable"><thead><tr><th>Community</th><th class="r">Occupancy</th><th class="r">Proj. Occ. (7/7)</th><th class="r">Proj. Occ. (7/28)</th><th class="r">Avail. Units</th><th class="r">Apps Started</th><th class="r">Notice to Vacate</th><th class="r">Move-ins</th><th>Leasing Status</th></tr></thead><tbody>
-  <tr onclick="showView('p6')"><td class="pname">The Rowhomes at Greyhound</td><td class="r">97.0%</td><td class="r">100.0%</td><td class="r">100.0% <span class="tri-up">&#9650;</span></td><td class="r mut">0</td><td class="r">1</td><td class="r mut">2</td><td class="r">1</td><td><span class="badge good">Strong</span></td></tr>
-  <tr onclick="showView('p0')"><td class="pname">High Line Pointe</td><td class="r">96.3%</td><td class="r">98.4%</td><td class="r">97.4% <span class="tri-up">&#9650;</span></td><td class="r mut">2</td><td class="r">2</td><td class="r mut">5</td><td class="r">3</td><td><span class="badge good">Strong</span></td></tr>
-  <tr onclick="showView('p3')"><td class="pname">Park Hill 4000</td><td class="r">90.4%</td><td class="r">92.2%</td><td class="r">95.2% <span class="tri-up">&#9650;</span></td><td class="r mut">6</td><td class="r">5</td><td class="r mut">8</td><td class="r">5</td><td><span class="badge warn">Steady</span></td></tr>
-  <tr onclick="showView('p7')"><td class="pname">The Vista at Greyhound</td><td class="r">6.8%</td><td class="r">17.6%</td><td class="r">18.5% <span style="color:var(--neutral)">&#9644;</span></td><td class="r mut">91</td><td class="r">3</td><td class="r mut">0</td><td class="r">0</td><td><span class="badge accent2">Lease-up</span></td></tr>
+  <table class="ptable"><thead><tr><th>Community</th><th class="r">Occupancy</th><th class="r">Proj. Occ. (7/7)</th><th class="r">Proj. Occ. (7/28)</th><th class="r">Vacant Not Leased</th><th class="r">On-Notice Not Leased</th><th class="r">Apps Started</th><th class="r">Move-ins</th><th>Leasing Status</th></tr></thead><tbody>
+  <tr onclick="showView('p6')"><td class="pname">The Rowhomes at Greyhound</td><td class="r">97.0%</td><td class="r">100.0%</td><td class="r">100.0% <span class="tri-up">&#9650;</span></td><td class="r mut">0</td><td class="r mut">0</td><td class="r">1</td><td class="r">1</td><td><span class="badge good">Strong</span></td></tr>
+  <tr onclick="showView('p0')"><td class="pname">High Line Pointe</td><td class="r">96.3%</td><td class="r">98.4%</td><td class="r">97.4% <span class="tri-up">&#9650;</span></td><td class="r mut">3</td><td class="r mut">2</td><td class="r">2</td><td class="r">3</td><td><span class="badge good">Strong</span></td></tr>
+  <tr onclick="showView('p3')"><td class="pname">Park Hill 4000</td><td class="r">90.4%</td><td class="r">92.2%</td><td class="r">95.2% <span class="tri-up">&#9650;</span></td><td class="r mut">6</td><td class="r mut">4</td><td class="r">5</td><td class="r">5</td><td><span class="badge warn">Steady</span></td></tr>
+  <tr onclick="showView('p7')"><td class="pname">The Vista at Greyhound</td><td class="r">6.8%</td><td class="r">17.6%</td><td class="r">18.5% <span style="color:var(--neutral)">&#9644;</span></td><td class="r mut">91</td><td class="r mut">0</td><td class="r">3</td><td class="r">0</td><td><span class="badge accent2">Lease-up</span></td></tr>
   </tbody></table>
   <div class="lbl-head">Income-restricted communities</div>
-  <table class="ptable"><thead><tr><th>Community</th><th class="r">Occupancy</th><th class="r">Proj. Occ. (7/7)</th><th class="r">Proj. Occ. (7/28)</th><th class="r">Avail. Units</th><th class="r">Apps Started</th><th class="r">Notice to Vacate</th><th class="r">Move-ins</th><th>Leasing Status</th></tr></thead><tbody>
-  <tr onclick="showView('p1')"><td class="pname">Holly38</td><td class="r">95.5%</td><td class="r">96.3%</td><td class="r">97.1% <span class="tri-up">&#9650;</span></td><td class="r mut">5</td><td class="r">1</td><td class="r mut">2</td><td class="r">0</td><td><span class="badge good">Strong</span></td></tr>
-  <tr onclick="showView('p5')"><td class="pname">The Landing at Greyhound</td><td class="r">93.7%</td><td class="r">90.1%</td><td class="r">91.5% <span class="tri-down">&#9660;</span></td><td class="r mut">5</td><td class="r">3</td><td class="r mut">12</td><td class="r">1</td><td><span class="badge warn">Steady</span></td></tr>
-  <tr onclick="showView('p4')"><td class="pname">Baker School Apartments</td><td class="r">91.5%</td><td class="r">91.5%</td><td class="r">92.2% <span class="tri-up">&#9650;</span></td><td class="r mut">5</td><td class="r">2</td><td class="r mut">5</td><td class="r">0</td><td><span class="badge warn">Steady</span></td></tr>
-  <tr onclick="showView('p2')"><td class="pname">Park Hill Station</td><td class="r">89.7%</td><td class="r">91.0%</td><td class="r">91.6% <span class="tri-up">&#9650;</span></td><td class="r mut">8</td><td class="r">1</td><td class="r mut">1</td><td class="r">1</td><td><span class="badge warn">Steady</span></td></tr>
+  <table class="ptable"><thead><tr><th>Community</th><th class="r">Occupancy</th><th class="r">Proj. Occ. (7/7)</th><th class="r">Proj. Occ. (7/28)</th><th class="r">Vacant Not Leased</th><th class="r">On-Notice Not Leased</th><th class="r">Apps Started</th><th class="r">Move-ins</th><th>Leasing Status</th></tr></thead><tbody>
+  <tr onclick="showView('p1')"><td class="pname">Holly38</td><td class="r">95.5%</td><td class="r">96.3%</td><td class="r">97.1% <span class="tri-up">&#9650;</span></td><td class="r mut">5</td><td class="r mut">2</td><td class="r">1</td><td class="r">0</td><td><span class="badge good">Strong</span></td></tr>
+  <tr onclick="showView('p5')"><td class="pname">The Landing at Greyhound</td><td class="r">93.7%</td><td class="r">90.1%</td><td class="r">91.5% <span class="tri-down">&#9660;</span></td><td class="r mut">5</td><td class="r mut">10</td><td class="r">3</td><td class="r">1</td><td><span class="badge warn">Steady</span></td></tr>
+  <tr onclick="showView('p4')"><td class="pname">Baker School Apartments</td><td class="r">91.5%</td><td class="r">91.5%</td><td class="r">92.2% <span class="tri-up">&#9650;</span></td><td class="r mut">5</td><td class="r mut">4</td><td class="r">2</td><td class="r">0</td><td><span class="badge warn">Steady</span></td></tr>
+  <tr onclick="showView('p2')"><td class="pname">Park Hill Station</td><td class="r">89.7%</td><td class="r">91.0%</td><td class="r">91.6% <span class="tri-up">&#9650;</span></td><td class="r mut">8</td><td class="r mut">1</td><td class="r">1</td><td class="r">1</td><td><span class="badge warn">Steady</span></td></tr>
   </tbody></table>
   <div class="tag">Portfolio Leasing Funnel · This Week vs Prior-Month Weekly Avg</div>
   <div class="grid2">
@@ -183,8 +184,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="tag">Leasing Status &middot; ResMan &amp; EliseAI</div>
   <div class="kpis">
     <div class="kpi"><div class="label">Occupancy</div><div class="val">96.3%</div><div class="foot"><span>7 vacant</span><span class="chip flat">current</span></div></div>
-    <div class="kpi"><div class="label">Vacant — Available</div><div class="val">2</div><div class="bedmix"><span class="bm"><b>1-bd</b> 1</span><span class="bm"><b>2-bd</b> 1</span></div></div>
-    <div class="kpi"><div class="label">Notice to Vacate</div><div class="val">5</div><div class="bedmix"><span class="bm"><b>1-bd</b> 2</span><span class="bm"><b>2-bd</b> 5</span></div></div>
+    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">3</div><div class="bedmix"><span class="bm"><b>1-bd</b> 1</span><span class="bm"><b>2-bd</b> 1</span></div></div>
+    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">2</div><div class="bedmix"><span class="bm"><b>1-bd</b> 2</span><span class="bm"><b>2-bd</b> 5</span></div></div>
     <div class="kpi"><div class="label">Applications Started</div><div class="val">2</div><div class="foot"><span>vs 2.26 wk avg</span><span class="chip down">&#9660; 12%</span></div></div>
     <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">3</div><div class="foot"><span>vs 1.81 wk avg</span><span class="chip up">&#9650; 66%</span></div></div>
   </div>
@@ -214,8 +215,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="tag">Leasing Status &middot; ResMan &amp; EliseAI</div>
   <div class="kpis">
     <div class="kpi"><div class="label">Occupancy</div><div class="val">95.5%</div><div class="foot"><span>11 vacant</span><span class="chip flat">current</span></div></div>
-    <div class="kpi"><div class="label">Vacant — Available</div><div class="val">5</div><div class="bedmix"><span class="bm"><b>1-bd</b> 5</span></div></div>
-    <div class="kpi"><div class="label">Notice to Vacate</div><div class="val">2</div><div class="bedmix"><span class="bm"><b>1-bd</b> 2</span></div></div>
+    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">5</div><div class="bedmix"><span class="bm"><b>1-bd</b> 5</span></div></div>
+    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">2</div><div class="bedmix"><span class="bm"><b>1-bd</b> 2</span></div></div>
     <div class="kpi"><div class="label">Applications Started</div><div class="val">1</div><div class="foot"><span>vs 1.58 wk avg</span><span class="chip down">&#9660; 37%</span></div></div>
     <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">0</div><div class="foot"><span>vs 0.45 wk avg</span><span class="chip down">&#9660; 100%</span></div></div>
   </div>
@@ -245,8 +246,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="tag">Leasing Status &middot; ResMan &amp; EliseAI</div>
   <div class="kpis">
     <div class="kpi"><div class="label">Occupancy</div><div class="val">89.7%</div><div class="foot"><span>16 vacant</span><span class="chip flat">current</span></div></div>
-    <div class="kpi"><div class="label">Vacant — Available</div><div class="val">8</div><div class="bedmix"><span class="bm"><b>1-bd</b> 4</span><span class="bm"><b>2-bd</b> 3</span><span class="bm"><b>3-bd</b> 1</span></div></div>
-    <div class="kpi"><div class="label">Notice to Vacate</div><div class="val">1</div><div class="bedmix"><span class="bm"><b>2-bd</b> 1</span></div></div>
+    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">8</div><div class="bedmix"><span class="bm"><b>1-bd</b> 4</span><span class="bm"><b>2-bd</b> 3</span><span class="bm"><b>3-bd</b> 1</span></div></div>
+    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">1</div><div class="bedmix"><span class="bm"><b>2-bd</b> 1</span></div></div>
     <div class="kpi"><div class="label">Applications Started</div><div class="val">1</div><div class="foot"><span>vs 2.48 wk avg</span><span class="chip down">&#9660; 60%</span></div></div>
     <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">1</div><div class="foot"><span>vs 1.13 wk avg</span><span class="chip down">&#9660; 12%</span></div></div>
   </div>
@@ -276,8 +277,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="tag">Leasing Status &middot; ResMan &amp; EliseAI</div>
   <div class="kpis">
     <div class="kpi"><div class="label">Occupancy</div><div class="val">90.4%</div><div class="foot"><span>16 vacant</span><span class="chip flat">current</span></div></div>
-    <div class="kpi"><div class="label">Vacant — Available</div><div class="val">6</div><div class="bedmix"><span class="bm"><b>1-bd</b> 6</span></div></div>
-    <div class="kpi"><div class="label">Notice to Vacate</div><div class="val">8</div><div class="bedmix"><span class="bm"><b>1-bd</b> 5</span><span class="bm"><b>2-bd</b> 3</span></div></div>
+    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">6</div><div class="bedmix"><span class="bm"><b>1-bd</b> 6</span></div></div>
+    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">4</div><div class="bedmix"><span class="bm"><b>1-bd</b> 5</span><span class="bm"><b>2-bd</b> 3</span></div></div>
     <div class="kpi"><div class="label">Applications Started</div><div class="val">5</div><div class="foot"><span>vs 1.13 wk avg</span><span class="chip up">&#9650; 342%</span></div></div>
     <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">5</div><div class="foot"><span>vs 0.9 wk avg</span><span class="chip up">&#9650; 456%</span></div></div>
   </div>
@@ -307,8 +308,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="tag">Leasing Status &middot; ResMan &amp; EliseAI</div>
   <div class="kpis">
     <div class="kpi"><div class="label">Occupancy</div><div class="val">91.5%</div><div class="foot"><span>12 vacant</span><span class="chip flat">current</span></div></div>
-    <div class="kpi"><div class="label">Vacant — Available</div><div class="val">5</div><div class="bedmix"><span class="bm"><b>2-bd</b> 5</span></div></div>
-    <div class="kpi"><div class="label">Notice to Vacate</div><div class="val">5</div><div class="bedmix"><span class="bm"><b>1-bd</b> 2</span><span class="bm"><b>2-bd</b> 3</span></div></div>
+    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">5</div><div class="bedmix"><span class="bm"><b>2-bd</b> 5</span></div></div>
+    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">4</div><div class="bedmix"><span class="bm"><b>1-bd</b> 2</span><span class="bm"><b>2-bd</b> 3</span></div></div>
     <div class="kpi"><div class="label">Applications Started</div><div class="val">2</div><div class="foot"><span>vs 1.58 wk avg</span><span class="chip up">&#9650; 27%</span></div></div>
     <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">0</div><div class="foot"><span>no prior-week baseline</span><span class="chip flat">new</span></div></div>
   </div>
@@ -338,8 +339,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="tag">Leasing Status &middot; ResMan &amp; EliseAI</div>
   <div class="kpis">
     <div class="kpi"><div class="label">Occupancy</div><div class="val">93.7%</div><div class="foot"><span>14 vacant</span><span class="chip flat">current</span></div></div>
-    <div class="kpi"><div class="label">Vacant — Available</div><div class="val">5</div><div class="bedmix"><span class="bm"><b>Studio</b> 1</span><span class="bm"><b>1-bd</b> 1</span><span class="bm"><b>2-bd</b> 2</span><span class="bm"><b>3-bd</b> 1</span></div></div>
-    <div class="kpi"><div class="label">Notice to Vacate</div><div class="val">12</div><div class="bedmix"><span class="bm"><b>1-bd</b> 3</span><span class="bm"><b>2-bd</b> 6</span><span class="bm"><b>3-bd</b> 3</span></div></div>
+    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">5</div><div class="bedmix"><span class="bm"><b>Studio</b> 1</span><span class="bm"><b>1-bd</b> 1</span><span class="bm"><b>2-bd</b> 2</span><span class="bm"><b>3-bd</b> 1</span></div></div>
+    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">10</div><div class="bedmix"><span class="bm"><b>1-bd</b> 3</span><span class="bm"><b>2-bd</b> 6</span><span class="bm"><b>3-bd</b> 3</span></div></div>
     <div class="kpi"><div class="label">Applications Started</div><div class="val">3</div><div class="foot"><span>vs 2.03 wk avg</span><span class="chip up">&#9650; 48%</span></div></div>
     <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">1</div><div class="foot"><span>vs 1.35 wk avg</span><span class="chip down">&#9660; 26%</span></div></div>
   </div>
@@ -369,8 +370,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="tag">Leasing Status &middot; ResMan &amp; EliseAI</div>
   <div class="kpis">
     <div class="kpi"><div class="label">Occupancy</div><div class="val">97.0%</div><div class="foot"><span>2 vacant</span><span class="chip flat">current</span></div></div>
-    <div class="kpi"><div class="label">Vacant — Available</div><div class="val">0</div><div class="bedmix"><span class="bm" style="color:var(--muted)">No availability</span></div></div>
-    <div class="kpi"><div class="label">Notice to Vacate</div><div class="val">2</div><div class="bedmix"><span class="bm"><b>4-bd</b> 1</span></div></div>
+    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">0</div><div class="bedmix"><span class="bm" style="color:var(--muted)">No availability</span></div></div>
+    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">0</div><div class="bedmix"><span class="bm"><b>4-bd</b> 1</span></div></div>
     <div class="kpi"><div class="label">Applications Started</div><div class="val">1</div><div class="foot"><span>vs 2.48 wk avg</span><span class="chip down">&#9660; 60%</span></div></div>
     <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">1</div><div class="foot"><span>vs 1.35 wk avg</span><span class="chip down">&#9660; 26%</span></div></div>
   </div>
@@ -405,6 +406,14 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <div class="kpi"><div class="label">Applications Started</div><div class="val">3</div><div class="foot"><span>vs 4.74 wk avg</span><span class="chip down">&#9660; 37%</span></div></div>
     <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">0</div><div class="foot"><span>no prior-week baseline</span><span class="chip flat">new</span></div></div>
   </div>
+  <div class="tag">Applications Started &middot; This Week</div>
+  <table class="ptable"><thead><tr><th>Unit</th><th class="r">Move-In Date</th><th class="r">Monthly Rent</th></tr></thead><tbody>
+  <tr><td class="pname">6278-2</td><td class="r">07/17/2026</td><td class="r">$2,674</td></tr>
+  <tr><td class="pname">6290-6</td><td class="r">08/01/2026</td><td class="r">$2,674</td></tr>
+  <tr><td class="pname">5311-11</td><td class="r">07/03/2026</td><td class="r">$2,649</td></tr>
+  </tbody></table>
+  <div class="tag">Applications Approved &middot; This Week</div>
+  <div class="synopsis"><p style="color:var(--muted);margin:0">No applications approved this reporting week.</p></div>
   <div class="tag">Trends</div>
   <div class="grid2">
     <div class="panel"><h3>Leasing by Move-in Month</h3><div class="ph">Units released by scheduled month (2026). Green = pre-leased (application in); grey = still available. 59 units do not yet have a release month assigned.</div><div class="chart-box"><canvas id="vista7"></canvas></div></div>
