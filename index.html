@@ -60,6 +60,13 @@ h1{font-family:'Fraunces',serif;font-weight:500;font-size:30px;letter-spacing:-.
 .panel h3{font-family:'Fraunces',serif;font-weight:500;font-size:18px;margin-bottom:2px}
 .panel .ph{color:var(--muted);font-size:12px;margin-bottom:16px}
 .chart-box{position:relative;height:230px} .chart-box.tall{height:300px}
+.chart-legend{display:flex;flex-wrap:wrap;gap:14px 20px;justify-content:center;margin-top:10px;font-size:11px;color:var(--muted)}
+.chart-legend .li{display:flex;align-items:center;gap:6px}
+.chart-legend .sw{width:10px;height:10px;flex:0 0 auto;display:inline-block}
+.chart-legend .sw.circle{border-radius:50%}
+.chart-legend .sw.diamond{width:8px;height:8px;transform:rotate(45deg);border-radius:1px}
+.chart-legend .sw.dash{width:14px;height:0;border-top:2px dashed currentColor}
+.chart-legend .sw.triangle{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:9px solid currentColor}
 .synopsis{background:var(--accent);color:#f4f2ed;border-radius:12px;padding:26px 28px;box-shadow:var(--shadow)}
 .synopsis h3{font-family:'Fraunces',serif;font-weight:500;font-size:20px;margin-bottom:14px;color:#fff}
 .synopsis p{font-size:13.5px;line-height:1.6;color:#d8d4ca;margin-bottom:12px}
@@ -129,7 +136,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <div class="kpi"><div class="label">Move-ins <span class="note">= signed</span></div><div class="val">15</div><div class="foot"><span>vs 8.6 wk avg</span><span class="chip up">▲ 74%</span></div></div>
   </div>
   <div class="tag">Portfolio Occupancy Trend</div>
-  <div class="panel"><h3>Stabilized Occupancy — Trailing 12 Months</h3><div class="ph">Unit-weighted occupancy across the 7 stabilized communities (excludes The Vista, in lease-up; also excludes C2 and DW Fund1, new to this report). Excludes one dedicated VRBO unit at High Line Pointe (non-marketed admin inventory). Dashed segment projects 10/19 and 10/26 from scheduled move-ins and notices.</div><div class="chart-box"><canvas id="portocc"></canvas></div></div>
+  <div class="panel"><h3>Stabilized Occupancy — Trailing 12 Months</h3><div class="ph">Unit-weighted occupancy across the 7 stabilized communities (excludes The Vista, in lease-up; also excludes C2 and DW Fund1, new to this report). Excludes one dedicated VRBO unit at High Line Pointe (non-marketed admin inventory). Dashed segment projects 10/19 and 10/26 from scheduled move-ins and notices.</div><div class="chart-box"><canvas id="portocc"></canvas></div><div class="chart-legend" id="portoccLegend"></div></div>
   <div class="tag">Community Leaderboard · Ranked by Occupancy</div>
   <div class="lbl-head">Market-rate communities</div>
   <table class="ptable"><thead><tr><th>Community</th><th class="r">Occupancy</th><th class="r">Proj. Occ. (10/19)</th><th class="r">Proj. Occ. (10/26)</th><th class="r">Vacant Not Leased</th><th class="r">On-Notice Not Leased</th><th class="r">Apps Started</th><th class="r">Move-ins</th><th>Leasing Status</th></tr></thead><tbody>
@@ -234,7 +241,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><p style="font-size:13px;line-height:1.6;color:var(--ink);margin:0">Get 1 month free on select units when you apply by 10/31. Loss leaders excluded: 1281-410, 1281-202, 1281-207, 1281-502, 1281-604, 1301-601, 1301-509.</p></div>
   <div class="tag">Trends</div>
   <div class="grid2">
-    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ0"></canvas></div></div>
+    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ0"></canvas></div><div class="chart-legend" id="occLegend0"></div></div>
     <div class="panel"><h3>Renewals — 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 42% renewed last 6 mo</span></h3><div class="ph">Each bar is that month's expiring leases &mdash; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months.</div><div class="chart-box"><canvas id="ren0"></canvas></div></div>
   </div>
   <div class="tag">New Applications &middot; This Month</div>
@@ -279,7 +286,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><p style="font-size:13px;line-height:1.6;color:var(--ink);margin:0">Get 1 month free when you apply by 10/31.</p></div>
   <div class="tag">Trends</div>
   <div class="grid2">
-    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ1"></canvas></div></div>
+    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ1"></canvas></div><div class="chart-legend" id="occLegend1"></div></div>
     <div class="panel"><h3>Renewals — 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 57% renewed last 6 mo</span></h3><div class="ph">Each bar is that month's expiring leases &mdash; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months.</div><div class="chart-box"><canvas id="ren1"></canvas></div></div>
   </div>
   <div class="tag">New Applications &middot; This Month</div>
@@ -326,7 +333,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><p style="font-size:13px;line-height:1.6;color:var(--ink);margin:0">Get 2 months free when you apply within 48 hours after the tour. Expires 10/31.</p></div>
   <div class="tag">Trends</div>
   <div class="grid2">
-    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ2"></canvas></div></div>
+    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ2"></canvas></div><div class="chart-legend" id="occLegend2"></div></div>
     <div class="panel"><h3>Renewals — 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 60% renewed last 6 mo</span></h3><div class="ph">Each bar is that month's expiring leases &mdash; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months.</div><div class="chart-box"><canvas id="ren2"></canvas></div></div>
   </div>
   <div class="tag">New Applications &middot; This Month</div>
@@ -370,7 +377,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><p style="font-size:13px;line-height:1.6;color:var(--ink);margin:0">Get 1 month free on select units when you apply within 48hrs after a tour. (Only on D306)</p></div>
   <div class="tag">Trends</div>
   <div class="grid2">
-    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ3"></canvas></div></div>
+    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ3"></canvas></div><div class="chart-legend" id="occLegend3"></div></div>
     <div class="panel"><h3>Renewals — 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 54% renewed last 6 mo</span></h3><div class="ph">Each bar is that month's expiring leases &mdash; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months.</div><div class="chart-box"><canvas id="ren3"></canvas></div></div>
   </div>
   <div class="tag">New Applications &middot; This Month</div>
@@ -415,7 +422,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><p style="font-size:13px;line-height:1.6;color:var(--ink);margin:0">Get 1 month free on select units when you apply by 10/31. Loss leaders excluded: #2305, #2303, #1306.</p></div>
   <div class="tag">Trends</div>
   <div class="grid2">
-    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ4"></canvas></div></div>
+    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ4"></canvas></div><div class="chart-legend" id="occLegend4"></div></div>
     <div class="panel"><h3>Renewals — 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 58% renewed last 6 mo</span></h3><div class="ph">Each bar is that month's expiring leases &mdash; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months.</div><div class="chart-box"><canvas id="ren4"></canvas></div></div>
   </div>
   <div class="tag">New Applications &middot; This Month</div>
@@ -458,7 +465,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><p style="font-size:13px;line-height:1.6;color:var(--ink);margin:0">$2,000 off on select units when you lease within 48 hours of your tour. Expires 10/31. Loss leaders excluded: Units 221 and 241.</p></div>
   <div class="tag">Trends</div>
   <div class="grid2">
-    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ5"></canvas></div></div>
+    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ5"></canvas></div><div class="chart-legend" id="occLegend5"></div></div>
     <div class="panel"><h3>Renewals — 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 67% renewed last 6 mo</span></h3><div class="ph">Each bar is that month's expiring leases &mdash; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months.</div><div class="chart-box"><canvas id="ren5"></canvas></div></div>
   </div>
   <div class="tag">New Applications &middot; This Month</div>
@@ -503,7 +510,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><p style="font-size:13px;line-height:1.6;color:var(--ink);margin:0">ASK US ABOUT OUR RENT-TO-OWN PROGRAM!</p></div>
   <div class="tag">Trends</div>
   <div class="grid2">
-    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ6"></canvas></div></div>
+    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ6"></canvas></div><div class="chart-legend" id="occLegend6"></div></div>
     <div class="panel"><h3>Renewals — 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 52% renewed last 6 mo</span></h3><div class="ph">Each bar is that month's expiring leases &mdash; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months.</div><div class="chart-box"><canvas id="ren6"></canvas></div></div>
   </div>
   <div class="tag">New Applications &middot; This Month</div>
@@ -595,7 +602,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><p style="font-size:13px;color:var(--muted);margin:0">Not offering concessions at this time.</p></div>
   <div class="tag">Trends</div>
   <div class="grid2">
-    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ8"></canvas></div></div>
+    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ8"></canvas></div><div class="chart-legend" id="occLegend8"></div></div>
     <div class="panel"><h3>Renewals — 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 42% renewed last 6 mo</span></h3><div class="ph">Each bar is that month's expiring leases &mdash; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months.</div><div class="chart-box"><canvas id="ren8"></canvas></div></div>
   </div>
   <div class="tag">New Applications &middot; This Month</div>
@@ -665,7 +672,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><p style="font-size:13px;color:var(--muted);margin:0">Not offering concessions at this time.</p></div>
   <div class="tag">Trends</div>
   <div class="grid2">
-    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ9"></canvas></div></div>
+    <div class="panel"><h3>Occupancy Trend</h3><div class="ph">12-month trend through 10/12 · dashed = projected 10/19 and 10/26 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ9"></canvas></div><div class="chart-legend" id="occLegend9"></div></div>
     <div class="panel"><h3>Renewals — 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 62% renewed last 6 mo</span></h3><div class="ph">Each bar is that month's expiring leases &mdash; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months.</div><div class="chart-box"><canvas id="ren9"></canvas></div></div>
   </div>
   <div class="tag">New Applications &middot; This Month</div>
@@ -709,65 +716,178 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
 
 <script>
 const DATA={"0": {"isVista": false, "hasElise": true, "hasRen": true, "occ": [86.77, 89.42, 91.01, 94.71, 94.18, 96.3, 96.3, 96.83, 91.53, 89.4, 88.9, 89.4], "ren": {"exp": [12, 13, 14, 18, 22, 18, 10, 11, 14, 7, 23, 13], "pending": [0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0], "signed": [8, 4, 10, 12, 5, 2, 4, 1, 0, 0, 0, 0], "confirmed": [4, 8, 4, 5, 16, 15, 3, 4, 2, 3, 7, 0], "notmarked": [0, 1, 0, 0, 1, 1, 2, 5, 11, 4, 16, 13], "signedPct6": 42}, "week": [31, 5, 4, 1, 3, 3, 2], "moAvg": [22.4, 9.57, 3.73, 2.33, 0.93, 0.93, 1.17], "vista": null, "bench": [1.0, 0.45, 0.27, 0.15, 0.09, null, 0.04], "benchLabel": "EliseAI benchmark (Conventional)"}, "1": {"isVista": false, "hasElise": true, "hasRen": true, "occ": [97.14, 96.33, 95.1, 95.1, 94.69, 95.51, 96.33, 95.92, 93.47, 90.2, 92.7, 93.5], "ren": {"exp": [4, 43, 14, 48, 26, 38, 15, 30, 14, 4, 24, 12], "pending": [0, 1, 1, 6, 4, 11, 1, 2, 1, 0, 0, 0], "signed": [4, 34, 9, 33, 12, 7, 0, 0, 0, 0, 0, 0], "confirmed": [0, 7, 3, 6, 6, 15, 5, 7, 3, 0, 3, 1], "notmarked": [0, 1, 1, 3, 4, 5, 9, 21, 10, 4, 21, 11], "signedPct6": 57}, "week": [24, 11, 5, 4, 5, 0, 2], "moAvg": [35.0, 18.2, 3.73, 2.1, 1.63, 0.7, 0.7], "vista": null, "bench": [1.0, 0.48, 0.21, 0.1, 0.08, null, 0.03], "benchLabel": "EliseAI benchmark (Affordable)"}, "2": {"isVista": false, "hasElise": true, "hasRen": true, "occ": [88.46, 89.74, 91.67, 88.46, 88.46, 90.38, 91.03, 94.87, 92.31, 91.7, 95.5, 95.5], "ren": {"exp": [27, 23, 8, 12, 8, 14, 11, 8, 6, 8, 19, 21], "pending": [0, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0], "signed": [21, 11, 4, 8, 4, 7, 2, 1, 0, 1, 0, 0], "confirmed": [6, 12, 4, 4, 4, 5, 4, 3, 1, 1, 0, 0], "notmarked": [0, 0, 0, 0, 0, 0, 2, 0, 5, 6, 19, 21], "signedPct6": 60}, "week": [20, 11, 5, 5, 2, 0, 2], "moAvg": [34.77, 24.03, 7.23, 4.43, 2.33, 1.17, 0.93], "vista": null, "bench": [1.0, 0.48, 0.21, 0.1, 0.08, null, 0.03], "benchLabel": "EliseAI benchmark (Affordable)"}, "3": {"isVista": false, "hasElise": true, "hasRen": true, "occ": [92.81, 90.42, 92.22, 92.81, 91.02, 91.02, 88.62, 89.82, 89.22, 89.2, 90.4, 89.2], "ren": {"exp": [14, 9, 16, 16, 10, 15, 28, 17, 6, 14, 4, 10], "pending": [0, 0, 0, 0, 0, 1, 6, 1, 0, 0, 0, 0], "signed": [9, 3, 7, 8, 7, 9, 7, 1, 0, 0, 0, 0], "confirmed": [5, 6, 9, 8, 1, 4, 11, 6, 4, 6, 1, 1], "notmarked": [0, 0, 0, 0, 2, 1, 4, 9, 2, 8, 3, 9], "signedPct6": 54}, "week": [45, 16, 12, 9, 1, 0, 0], "moAvg": [36.63, 13.77, 10.03, 6.3, 2.33, 2.33, 2.1], "vista": null, "bench": [1.0, 0.45, 0.27, 0.15, 0.09, null, 0.04], "benchLabel": "EliseAI benchmark (Conventional)"}, "4": {"isVista": false, "hasElise": true, "hasRen": true, "occ": [93.66, 95.77, 92.96, 92.25, 91.55, 90.14, 91.55, 90.85, 90.85, 90.8, 93.0, 93.0], "ren": {"exp": [29, 10, 11, 9, 6, 11, 8, 17, 11, 15, 16, 12], "pending": [0, 0, 0, 0, 2, 9, 5, 14, 2, 0, 1, 0], "signed": [28, 7, 5, 3, 1, 0, 0, 1, 1, 0, 0, 0], "confirmed": [1, 3, 5, 6, 2, 2, 3, 2, 0, 2, 1, 1], "notmarked": [0, 0, 1, 0, 1, 0, 0, 0, 8, 13, 14, 11], "signedPct6": 58}, "week": [18, 10, 4, 2, 1, 0, 2], "moAvg": [29.87, 17.73, 5.6, 3.27, 1.87, 0.93, 0.47], "vista": null, "bench": [1.0, 0.48, 0.21, 0.1, 0.08, null, 0.03], "benchLabel": "EliseAI benchmark (Affordable)"}, "5": {"isVista": false, "hasElise": true, "hasRen": true, "occ": [92.83, 92.38, 91.93, 92.83, 94.62, 93.72, 91.03, 91.03, 91.93, 91.9, 91.5, 92.4], "ren": {"exp": [27, 24, 24, 16, 10, 10, 16, 35, 10, 16, 16, 30], "pending": [0, 0, 0, 0, 0, 0, 6, 18, 1, 0, 0, 0], "signed": [20, 16, 15, 9, 9, 5, 7, 0, 0, 0, 0, 0], "confirmed": [7, 8, 9, 7, 1, 5, 2, 11, 2, 4, 2, 1], "notmarked": [0, 0, 0, 0, 0, 0, 1, 6, 7, 12, 14, 29], "signedPct6": 67}, "week": [25, 18, 3, 1, 0, 2, 4], "moAvg": [19.6, 12.6, 3.97, 1.87, 2.1, 2.1, 1.63], "vista": null, "bench": [1.0, 0.48, 0.21, 0.1, 0.08, null, 0.03], "benchLabel": "EliseAI benchmark (Affordable)"}, "6": {"isVista": false, "hasElise": true, "hasRen": true, "occ": [88.06, 94.03, 94.03, 92.54, 88.06, 95.52, 95.52, 95.52, 92.54, 85.1, 85.1, 83.6], "ren": {"exp": [17, 4, 6, 10, 2, 5, 10, 1, 4, 5, 4, 8], "pending": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "signed": [6, 2, 4, 7, 2, 2, 4, 0, 0, 0, 0, 0], "confirmed": [11, 2, 1, 3, 0, 3, 5, 1, 2, 1, 0, 1], "notmarked": [0, 0, 1, 0, 0, 0, 1, 0, 2, 4, 4, 7], "signedPct6": 52}, "week": [14, 8, 5, 2, 0, 0, 0], "moAvg": [6.53, 3.03, 1.4, 0.47, 0.0, 0.0, 0.0], "vista": null, "bench": [1.0, 0.45, 0.27, 0.15, 0.09, null, 0.04], "benchLabel": "EliseAI benchmark (Conventional)"}, "7": {"isVista": true, "hasElise": true, "hasRen": true, "occ": [0.0, 0.0, 0.0, 0.0, 0.0, 7.63, 20.34, 30.51, 37.29, 39.0, 44.1, 44.1], "ren": {"exp": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "pending": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "signed": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "confirmed": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "notmarked": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "signedPct6": 0}, "week": [19, 11, 9, 1, 3, 2, 3], "moAvg": [10.5, 6.07, 3.73, 2.57, 1.87, 1.17, 1.63], "vista": {"labels": ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan"], "leased": [9, 15, 13, 10, 8, 0, 2, 1], "available": [0, 0, 0, 0, 4, 13, 10, 7], "total": 57, "totalUnits": 118, "availTotal": 61}, "bench": [1.0, 0.45, 0.27, 0.15, 0.09, null, 0.04], "benchLabel": "EliseAI benchmark (Conventional)"}, "8": {"isVista": false, "hasElise": false, "hasRen": true, "occ": [92.0, 92.0, 88.0, 84.0, 84.0, 88.0, 88.0, 84.0, 76.0, 76.0, 76.0, 76.0], "ren": {"exp": [0, 1, 3, 4, 3, 1, 0, 2, 1, 3, 2, 3], "pending": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "signed": [0, 0, 3, 2, 0, 0, 0, 1, 0, 0, 0, 0], "confirmed": [0, 1, 0, 2, 3, 1, 0, 0, 1, 0, 0, 0], "notmarked": [0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 2, 3], "signedPct6": 42}, "week": [0, 0, 0, 0, 3, 0, 0], "moAvg": [null, null, null, null, null, null, null], "vista": null, "bench": null, "benchLabel": null}, "9": {"isVista": false, "hasElise": false, "hasRen": true, "occ": [93.75, 93.75, 93.75, 100.0, 100.0, 100.0, 93.75, 87.5, 87.5, 93.8, 93.8, 93.8], "ren": {"exp": [0, 1, 3, 4, 0, 0, 0, 2, 1, 1, 2, 2], "pending": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], "signed": [0, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0], "confirmed": [0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0], "notmarked": [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2], "signedPct6": 62}, "week": [0, 0, 0, 0, 0, 0, 0], "moAvg": [null, null, null, null, null, null, null], "vista": null, "bench": null, "benchLabel": null}};
-const PORTOCC={"months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "10/12", "10/19", "10/26"], "portfolioStable": [92.03, 92.6, 92.6, 92.85, 92.44, 93.33, 92.85, 93.25, 91.38, 89.99, 91.24, 91.39], "totalsIncl": [83.98, 84.5, 84.5, 84.72, 84.35, 85.83, 86.5, 87.76, 86.65, 85.53, 87.11, 87.25]};
+const PORTOCC={"months": ["1/31", "2/28", "3/31", "4/30", "5/31", "6/30", "7/31", "8/31", "9/30", "10/12", "10/19", "10/26"], "portfolioStable": [92.03, 92.6, 92.6, 92.85, 92.44, 93.33, 92.85, 93.25, 91.38, 89.99, 91.24, 91.39], "totalsIncl": [83.98, 84.5, 84.5, 84.72, 84.35, 85.83, 86.5, 87.76, 86.65, 85.53, 87.11, 87.25]};
 const PORTFUNNEL={"market": {"wk": [109, 40, 30, 13, 7, 5, 5], "base": [76.06, 32.44, 18.89, 11.67, 5.13, 4.43, 4.9], "partial": [false, false, false, false, false, false, false], "bench": [1.0, 0.45, 0.27, 0.15, 0.09, null, 0.04], "benchLabel": "EliseAI benchmark (Conventional)"}, "income": {"wk": [87, 50, 17, 12, 8, 2, 10], "base": [119.24, 72.56, 20.53, 11.67, 7.93, 4.9, 3.73], "partial": [false, false, false, false, false, false, false], "bench": [1.0, 0.48, 0.21, 0.1, 0.08, null, 0.03], "benchLabel": "EliseAI benchmark (Affordable)"}};
 const STAGES=["Leads", "Engaged", "Tours Booked", "Tours Attended", "App Started", "App Approved", "Leases Signed (move-ins)"];
-const occMonths=["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "10/12", "10/19", "10/26"];
+const occMonths=["1/31", "2/28", "3/31", "4/30", "5/31", "6/30", "7/31", "8/31", "9/30", "10/12", "10/19", "10/26"];
 const renMonths=["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"];
 const REPORTWEEK="Oct 5 \u2013 11, 2026";
 const ink='#1c1b18',muted='#6f6a60',accent='#2b3a4a',accent2='#b08442',good='#1f8a4c',bad='#c2342c',warn='#c98a1a',line='#e4e0d6';
 Chart.defaults.font.family="'IBM Plex Sans', sans-serif";Chart.defaults.color=muted;
 const RENDERED={};
 
-// Hover-reveal event markers for one-off methodology/portfolio-scope
-// changes -- drawn as a small red (theme "bad"/down-trend red) downward
-// triangle "ticker" pinned near the top of the chart at the exact x
-// position of the event, with a two-line label that only displays on
-// hover (enter/leave events toggle label.options.display). xValue can be
-// fractional on a category scale (e.g. 7.3 = 30% of the way from the
-// category-7 tick to category-8) to place the marker on the actual event
-// date rather than snapping to the nearest monthly tick.
-function tickerAnnotation(id, xValue, yValue, lines){
+// Event markers for one-off methodology/portfolio-scope changes -- drawn
+// via the annotation plugin as a small red (theme "bad"/down-trend red)
+// shape sitting directly on the data line at the x/y of the event's month
+// tick (see monthX/monthY below -- anchored to a whole month index so it
+// always lines up with the month labels printed along the bottom axis).
+// NOTE: this only draws the shape. The annotation plugin's own built-in
+// enter/leave/label-toggle interaction turned out not to fire reliably in
+// practice (tried first, didn't show on hover) -- hover is instead handled
+// by plain DOM mousemove math in attachAnnotationHover() below, which
+// doesn't depend on the plugin's interaction model at all.
+function tickerAnnotation(id, xValue, yValue){
   const ann={};
   ann[id]={
     type:'point', xValue:xValue, yValue:yValue,
     backgroundColor:bad, borderColor:'#fff', borderWidth:1.5,
-    radius:6, pointStyle:'triangle', rotation:180,
-    label:{display:false, content:lines, backgroundColor:bad, color:'#fff',
-      font:{size:10,weight:600}, padding:6, position:'start', yAdjust:-16},
-    enter:(ctx)=>{ctx.element.label.options.display=true; ctx.chart.draw();},
-    leave:(ctx)=>{ctx.element.label.options.display=false; ctx.chart.draw();}
+    radius:7, pointStyle:'triangle', rotation:0
   };
   return ann;
 }
 
-// Fractional category-axis x-position for a mid-month event date, given
-// the month-label array, the month name the event falls within, the day
-// of that month, and an assumed days-in-month (30 unless passed). Returns
-// null if the "from" month isn't in the visible window (can't place it).
-function midMonthX(monthLabels, fromMonth, day, daysInMonth){
-  const idx = monthLabels.indexOf(fromMonth);
-  if(idx<0) return null;
-  return idx + (day/(daysInMonth||30));
+// Floating tooltip div (one shared instance, repositioned/retexted per
+// hover) used by attachAnnotationHover -- a plain DOM element rather than
+// anything plugin-specific, so it's guaranteed to work the same way every
+// other hover tooltip on the page does.
+let annotTipEl=null;
+function annotTooltip(){
+  if(!annotTipEl){
+    annotTipEl=document.createElement('div');
+    annotTipEl.style.cssText="position:fixed;z-index:999;pointer-events:none;"
+      +"background:"+bad+";color:#fff;font:600 11px/1.45 'IBM Plex Sans',sans-serif;"
+      +"padding:7px 10px;border-radius:7px;display:none;max-width:230px;"
+      +"box-shadow:0 4px 14px rgba(0,0,0,.18)";
+    document.body.appendChild(annotTipEl);
+  }
+  return annotTipEl;
 }
 
-// Invisible dataset that exists only to put a legend swatch next to
-// "Stabilized occupancy"/"Occupancy" and "Projected" explaining what the
-// red triangle marker means -- Chart.js legends are built from datasets,
-// so a real (all-null) dataset is the standard way to add an entry that
-// isn't itself plotted.
-function annotationLegendDataset(n){
-  return {label:'Annotations', data:new Array(n).fill(null), showLine:false,
-    pointStyle:'triangle', rotation:180, pointRadius:6,
-    pointBackgroundColor:bad, borderColor:bad};
+// Wires plain mousemove/mouseleave listeners on a chart's canvas to show
+// the shared tooltip whenever the pointer is near one of this chart's
+// event-marker pixel positions (computed live from the chart's own x/y
+// scales, so it tracks correctly through resizes). items: array of
+// {xValue, yValue, lines}.
+function attachAnnotationHover(chart, items){
+  if(!items || !items.length) return;
+  const canvas=chart.canvas, tip=annotTooltip();
+  canvas.addEventListener('mousemove', function(evt){
+    const rect=canvas.getBoundingClientRect();
+    const mx=evt.clientX-rect.left, my=evt.clientY-rect.top;
+    let hit=null;
+    for(const it of items){
+      const px=chart.scales.x.getPixelForValue(it.xValue);
+      const py=chart.scales.y.getPixelForValue(it.yValue);
+      if(Math.hypot(mx-px,my-py)<=11){ hit=it; break; }
+    }
+    if(hit){
+      tip.innerHTML=hit.lines.join('<br>');
+      tip.style.left=(evt.clientX+14)+'px';
+      tip.style.top=(evt.clientY-12)+'px';
+      tip.style.display='block';
+      canvas.style.cursor='pointer';
+    } else {
+      tip.style.display='none';
+      canvas.style.cursor='';
+    }
+  });
+  canvas.addEventListener('mouseleave', function(){
+    tip.style.display='none'; canvas.style.cursor='';
+  });
+}
+
+// Fractional category-axis position for an event's EXACT calendar date,
+// placed proportionally between two adjacent x-axis ticks (fromIdx's
+// represented date and toIdx's represented date). Anchoring to the
+// nearest whole tick (tried first) made 9/9 read as if it landed on 9/1
+// and 10/5 read as if it landed on 10/12 -- this interpolates properly
+// instead so the marker sits at the real date along the line between the
+// two ticks. Dates are plain `Date` objects (year/month/day only).
+function dateXAt(fromIdx, toIdx, fromDate, toDate, eventDate){
+  if(fromIdx<0 || toIdx<0) return null;
+  const span = toDate - fromDate;
+  const frac = span<=0 ? 0 : Math.min(1, Math.max(0, (eventDate-fromDate)/span));
+  return fromIdx + (toIdx-fromIdx)*frac;
+}
+
+// The series value interpolated at that same fractional position, so the
+// marker sits directly on the trend line rather than floating at a fixed
+// height. valuesArr is the raw (non-null-padded) series aligned to the
+// same index space as fromIdx/toIdx.
+function dateYAt(valuesArr, fromIdx, toIdx, fromDate, toDate, eventDate){
+  if(fromIdx<0 || toIdx<0 || fromIdx>=valuesArr.length || toIdx>=valuesArr.length) return null;
+  const a=valuesArr[fromIdx], b=valuesArr[toIdx];
+  if(a==null && b==null) return null;
+  if(a==null) return b;
+  if(b==null) return a;
+  const span = toDate - fromDate;
+  const frac = span<=0 ? 0 : Math.min(1, Math.max(0, (eventDate-fromDate)/span));
+  return a + (b-a)*frac;
+}
+
+// Label-based convenience wrappers around dateXAt/dateYAt, for the common
+// case where both ticks are named month labels in the same labels array.
+function dateX(monthLabels, fromLabel, toLabel, fromDate, toDate, eventDate){
+  return dateXAt(monthLabels.indexOf(fromLabel), monthLabels.indexOf(toLabel), fromDate, toDate, eventDate);
+}
+function dateY(valuesArr, monthLabels, fromLabel, toLabel, fromDate, toDate, eventDate){
+  return dateYAt(valuesArr, monthLabels.indexOf(fromLabel), monthLabels.indexOf(toLabel), fromDate, toDate, eventDate);
+}
+
+// The last three entries of occMonths/po.months are always the "now"/+1wk/
+// +4wk projection labels (see occ_labels in gen_html.py) -- captured once so
+// actProjFor below can find them by name.
+const NOW_LABEL = occMonths[occMonths.length-3];
+const P19_LABEL = occMonths[occMonths.length-2];
+const P26_LABEL = occMonths[occMonths.length-1];
+
+// REVERTED 10/14/2026 (same day, second follow-up): splicing a real tick
+// into the trend line's own labels/data (tried above) changed the shape of
+// the actual occupancy line itself -- a real reported data point now sat at
+// an interpolated value in a position it was never reported at, which read
+// as inaccurate. Event markers are back to being a separate floating overlay
+// that doesn't touch the line's data at all: drawn as an upward triangle
+// sitting on the chart's own bottom axis line (yMin), positioned left-right
+// at the event's exact calendar date via dateX's fractional interpolation.
+// The line itself (and its real reported values) never changes.
+
+// Rebuilds the solid "actual" / dashed "projected" split for a chart's own
+// (possibly event-tick-extended) labels/values, rather than hardcoding which
+// indices are historical vs. projected -- needed because inserting an event
+// tick shifts every index after it. The last two ticks are always the +1wk/
+// +4wk projection points (never actual); the dashed segment starts at the
+// "now" tick and runs through the end, overlapping the solid line there so
+// the two segments visually connect.
+function actProjFor(values, labels){
+  const nowIdx = labels.indexOf(NOW_LABEL);
+  const act = values.slice();
+  for(let i=labels.length-2; i<labels.length; i++) act[i]=null;
+  const proj = values.map((v,i)=> i>=nowIdx ? v : null);
+  return {act, proj};
+}
+
+// Custom HTML/CSS legend, built directly into a container div beside the
+// canvas, rather than Chart.js's own canvas-drawn legend. Chart.js's native
+// legend.labels.usePointStyle rendering of 'circle'/'rectRot' point styles
+// came out as an oval/egg shape regardless of boxWidth/boxHeight -- too
+// version-dependent to rely on -- so the legend swatches here are plain CSS
+// shapes instead, guaranteed to render as true circles and diamonds.
+// items: array of {label, color, shape:'circle'|'diamond'|'dash'|'triangle'}.
+function renderChartLegend(containerId, items){
+  const el=document.getElementById(containerId);
+  if(!el) return;
+  el.innerHTML = items.map(function(it){
+    const styleAttr = (it.shape==='dash'||it.shape==='triangle') ? ('color:'+it.color) : ('background:'+it.color);
+    return '<span class="li"><span class="sw '+it.shape+'" style="'+styleAttr+'"></span>'+it.label+'</span>';
+  }).join('');
 }
 
 function renderProp(idx){
   if(RENDERED[idx]) return; RENDERED[idx]=true;
   const d=DATA[idx]; if(!d) return;
   if(!d.isVista && document.getElementById('occ'+idx)){
-    const act=d.occ.slice(); for(let i=10;i<12;i++) act[i]=null;
-    const proj=d.occ.map((v,i)=> i>=9?v:null);
+    const {act, proj} = actProjFor(d.occ, occMonths);
+    const yMin = Math.max(0,Math.min(...d.occ.filter(x=>x))-8);
     // High Line Pointe (idx 0) only: the Aug->Sep drop is a unit-count basis
     // change, not a leasing swing -- the 13 Landing Living LLC corporate/
     // furnished units (formerly excluded from the occupancy math under the
@@ -775,21 +895,33 @@ function renderProp(idx){
     // effective unit count on 9/9/2026 (for report week Aug 31-Sep 6), then
     // the basis was corrected again 9/14/2026 (188->189 units). Occupied-unit
     // count barely moved; occupancy pct dropped because the denominator
-    // grew. Marker sits at 9/9 itself (30% of the way from the Aug tick to
-    // the Sep tick, treating Aug->Sep as a 30-day span), not generically on
-    // the Sep tick -- once OCC_MONTHS rolls past a full year this lookup
-    // should be revisited (it assumes a single Aug/Sep in the window).
-    const hlpX = (idx===0) ? midMonthX(occMonths,'Aug',9,30) : null;
-    const annotations = (hlpX!=null)
-      ? tickerAnnotation('hlpBasis', hlpX, 99,
-          ['Corporate/furnished units added back', 'into occupancy count — 9/9/2026'])
-      : {};
+    // grew. The marker sits on the chart's own bottom axis line (not on the
+    // trend line itself, which stays exactly the reported data), positioned
+    // left-right at its exact calendar date (9/9/2026) via fractional
+    // interpolation between the Aug tick ('8/31') and the Sep tick ('9/30')
+    // -- OCC_MONTHS labels are each month's own last-day date (not the month
+    // name) per Lauri's 10/14/2026 request. Once OCC_MONTHS rolls past a
+    // full year this `indexOf('8/31'/'9/30')` lookup should be revisited (it
+    // assumes a single Aug/Sep in the window, and both digits need to carry
+    // the right year once this report has run past 12 months).
+    const annotations={}, hoverItems=[];
+    if(idx===0){
+      const hlpX = dateX(occMonths,'8/31','9/30', new Date(2026,7,31), new Date(2026,8,30), new Date(2026,8,9));
+      if(hlpX!=null){
+        Object.assign(annotations, tickerAnnotation('hlpBasis', hlpX, yMin));
+        hoverItems.push({xValue:hlpX, yValue:yMin,
+          lines:['13 furnished units added back', 'into occupancy count — 9/9/2026']});
+      }
+    }
     const occDatasets=[
       {label:'Occupancy',data:act,borderColor:accent,backgroundColor:'rgba(43,58,74,.08)',borderWidth:2.5,fill:true,tension:.3,pointRadius:3,pointBackgroundColor:accent,spanGaps:false},
       {label:'Projected',data:proj,borderColor:accent2,borderDash:[5,4],borderWidth:2,fill:false,tension:.3,pointRadius:3,pointBackgroundColor:accent2}
     ];
-    if(hlpX!=null) occDatasets.push(annotationLegendDataset(occMonths.length));
-    new Chart(document.getElementById('occ'+idx),{type:'line',data:{labels:occMonths,datasets:occDatasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}},tooltip:{filter:item=>item.dataset.label!=='Annotations',callbacks:{label:c=>c.parsed.y!=null?c.dataset.label+': '+c.parsed.y.toFixed(2)+'%':''}},annotation:{annotations:annotations}},scales:{y:{min:Math.max(0,Math.min(...d.occ.filter(x=>x))-8),max:100,ticks:{callback:v=>v+'%'},grid:{color:line}},x:{grid:{display:false}}}}});
+    const occChart=new Chart(document.getElementById('occ'+idx),{type:'line',data:{labels:occMonths,datasets:occDatasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y!=null?c.dataset.label+': '+c.parsed.y.toFixed(2)+'%':''}},annotation:{annotations:annotations}},scales:{y:{min:yMin,max:100,ticks:{callback:v=>v+'%'},grid:{color:line}},x:{grid:{display:false}}}}});
+    attachAnnotationHover(occChart, hoverItems);
+    const occLegendItems=[{label:'Occupancy',color:accent,shape:'circle'},{label:'Projected',color:accent2,shape:'dash'}];
+    if(hoverItems.length) occLegendItems.push({label:'Annotations',color:bad,shape:'triangle'});
+    renderChartLegend('occLegend'+idx, occLegendItems);
   }
   if(!d.isVista && d.hasRen && document.getElementById('ren'+idx)){
     const exp=d.ren.exp, pending=d.ren.pending, signed=d.ren.signed, confirmed=d.ren.confirmed, notmarked=d.ren.notmarked;
@@ -859,34 +991,48 @@ function renderSummaryCharts(){
   const el=document.getElementById('portocc');
   if(el){
     const po=PORTOCC;
-    const act=po.portfolioStable.slice(); for(let i=10;i<12;i++) act[i]=null;
-    const proj=po.portfolioStable.map((v,i)=> i>=9?v:null);
-    // Two portfolio-level events marked here:
-    // 1) High Line Pointe's corporate/furnished units went back into its
+    const {act, proj} = actProjFor(po.portfolioStable, po.months);
+    const yMin = 85;
+    // Two portfolio-level events marked here as a floating overlay on the
+    // chart's own bottom axis line (yMin) -- NOT spliced into the trend
+    // line's data, which stays exactly the reported figures. Each marker is
+    // positioned left-right at its exact calendar date via dateX's
+    // fractional interpolation between the two ticks it falls between:
+    // 1) High Line Pointe's furnished units went back into its
     //    occupancy count on 9/9/2026 -- the main driver of the portfolio's
-    //    own Aug->Sep dip, same event as the marker on HLP's own property
-    //    page. Placed at 9/9 itself (30% of the way from the Aug tick to
-    //    the Sep tick), matching that chart.
+    //    own Aug->Sep dip, same event and same interpolation as the marker
+    //    on HLP's own property page.
     // 2) C2 Greyhound Park and DW Fund1 were added to the portfolio dataset
     //    10/5/2026 (first appear as their own community tabs/leaderboard
-    //    rows that week). The trailing-12-month series has no history for
-    //    them before that date, so this marker sits at the "now" point --
-    //    the first point in this series that reflects their inclusion.
-    //    occMonths always ends with [now, p19, p26], so "now" is 3 from the
-    //    end; once October rolls into OCC_MONTHS as a historical month next
-    //    build, move this to occMonths.indexOf('Oct') instead.
-    const portAnnotations = {};
-    const hlpPortX = midMonthX(po.months,'Aug',9,30);
-    if(hlpPortX!=null) Object.assign(portAnnotations, tickerAnnotation('hlpBasisPort', hlpPortX, 95.5,
-      ['High Line Pointe corporate/furnished', 'units added to occupancy count — 9/9/2026']));
-    const nowIdx = po.months.length - 3;
-    Object.assign(portAnnotations, tickerAnnotation('c2dwfund1', nowIdx, 95.5,
-      ['C2 Greyhound Park & DW Fund1', 'added to portfolio — 10/5/2026']));
-    new Chart(el,{type:'line',data:{labels:po.months,datasets:[
+    //    rows that week) -- interpolated between the Sep tick (9/30/2026)
+    //    and the "now" tick, whatever date that currently is (parsed from
+    //    its own "MM/DD" label each build, so this keeps working as the
+    //    report week rolls forward without a hardcoded date). Once October
+    //    rolls into OCC_MONTHS as a historical month, re-anchor this to
+    //    interpolate toward the Oct tick instead of "now".
+    const portAnnotations = {}, portHoverItems=[];
+    const hlpPortX = dateX(po.months, '8/31','9/30', new Date(2026,7,31), new Date(2026,8,30), new Date(2026,8,9));
+    if(hlpPortX!=null){
+      Object.assign(portAnnotations, tickerAnnotation('hlpBasisPort', hlpPortX, yMin));
+      portHoverItems.push({xValue:hlpPortX, yValue:yMin,
+        lines:['13 High Line Pointe furnished units', 'added to occupancy count — 9/9/2026']});
+    }
+    const nowParts = (NOW_LABEL||'').split('/').map(Number);
+    const nowDate = nowParts.length===2 ? new Date(2026, nowParts[0]-1, nowParts[1]) : null;
+    const fundX = nowDate ? dateX(po.months, '9/30', NOW_LABEL, new Date(2026,8,30), nowDate, new Date(2026,9,5)) : null;
+    if(fundX!=null){
+      Object.assign(portAnnotations, tickerAnnotation('c2dwfund1', fundX, yMin));
+      portHoverItems.push({xValue:fundX, yValue:yMin,
+        lines:['C2 Greyhound Park & DW Fund1', 'added to portfolio — 10/5/2026']});
+    }
+    const portChart=new Chart(el,{type:'line',data:{labels:po.months,datasets:[
       {label:'Stabilized occupancy',data:act,borderColor:accent,backgroundColor:'rgba(43,58,74,.08)',borderWidth:2.5,fill:true,tension:.3,pointRadius:3,pointBackgroundColor:accent,spanGaps:false},
-      {label:'Projected',data:proj,borderColor:accent2,borderDash:[5,4],borderWidth:2,fill:false,tension:.3,pointRadius:3,pointBackgroundColor:accent2},
-      annotationLegendDataset(po.months.length)
-    ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}},tooltip:{filter:item=>item.dataset.label!=='Annotations',callbacks:{label:c=>c.parsed.y!=null?c.dataset.label+': '+c.parsed.y.toFixed(1)+'%':''}},annotation:{annotations:portAnnotations}},scales:{y:{min:85,max:96,ticks:{callback:v=>v+'%'},grid:{color:line}},x:{grid:{display:false}}}}});
+      {label:'Projected',data:proj,borderColor:accent2,borderDash:[5,4],borderWidth:2,fill:false,tension:.3,pointRadius:3,pointBackgroundColor:accent2}
+    ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y!=null?c.dataset.label+': '+c.parsed.y.toFixed(1)+'%':''}},annotation:{annotations:portAnnotations}},scales:{y:{min:yMin,max:96,ticks:{callback:v=>v+'%'},grid:{color:line}},x:{grid:{display:false}}}}});
+    attachAnnotationHover(portChart, portHoverItems);
+    const portLegendItems=[{label:'Stabilized occupancy',color:accent,shape:'circle'},{label:'Projected',color:accent2,shape:'dash'}];
+    if(portHoverItems.length) portLegendItems.push({label:'Annotations',color:bad,shape:'triangle'});
+    renderChartLegend('portoccLegend', portLegendItems);
   }
   renderPortFunnel('market','funnelMarket');
   renderPortFunnel('income','funnelIncome');
