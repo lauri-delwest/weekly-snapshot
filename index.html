@@ -126,13 +126,13 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="reportweek">Reporting week<span class="big">Oct 26 – Nov 1, 2026</span></div>
   <div class="tag">Portfolio at a Glance</div>
   <div class="kpis">
-    <div class="kpi"><div class="label">Stabilized Occupancy</div><div class="val">90.5%</div><div class="foot"><span>7 communities (ex-Vista)</span><span class="chip down">&#9660; 0.3 pp vs Oct</span></div></div>
+    <div class="kpi"><div class="label">Stabilized Occupancy</div><div class="val">90.5%</div><div class="foot"><span>7 communities (ex-Vista)</span><span class="chip up">&#9650; 0.2 pp WoW</span></div></div>
     <div class="kpi"><div class="label">Tours Attended</div><div class="val">16</div><div class="foot"><span>vs 22.8 Oct wk avg</span><span class="chip down">&#9660; 30%</span></div></div>
     <div class="kpi"><div class="label">Applications Started</div><div class="val">15</div><div class="foot"><span>vs 14.2 Oct wk avg</span><span class="chip up">&#9650; 5%</span></div></div>
     <div class="kpi"><div class="label">Move-ins <span class="note">= signed</span></div><div class="val">9</div><div class="foot"><span>vs 9.3 Oct wk avg</span><span class="chip down">&#9660; 3%</span></div></div>
   </div>
   <div class="tag">Portfolio Occupancy Trend</div>
-  <div class="panel"><h3>Stabilized Occupancy &middot; Trailing 12 Months + 4-Month Projection</h3><div class="ph">Unit-weighted occupancy across the 7 stabilized communities (excludes The Vista, in lease-up). Excludes one dedicated VRBO unit at High Line Pointe (non-marketed admin inventory). Monthly points are month-end closes from ResMan&rsquo;s Twelve Month Occupancy Trend; 11/2 is current. Dashed segment projects month-end occupancy for 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices; ResMan only projects activity already on the books, so a flat line further out means nothing is scheduled yet, not that occupancy is locked in.</div><div class="chart-box"><canvas id="portocc"></canvas></div></div>
+  <div class="panel"><h3>Stabilized Occupancy &middot; Trailing 12 Months + 4-Month Projection</h3><div class="ph">Unit-weighted occupancy across the 7 stabilized communities (excludes The Vista, in lease-up; also excludes C2 and DW Fund1, shown under Single-Family &amp; Ancillary). Excludes one dedicated VRBO unit at High Line Pointe (non-marketed admin inventory). Points are month-end closes (12/31 through 10/31) from ResMan&rsquo;s Twelve Month Occupancy Trend; 11/2 is current. Dashed segment projects month-end occupancy for 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices. Red triangles mark annotations; hover for detail. ResMan only projects activity already on the books, so a flat line further out means nothing is scheduled yet, not that occupancy is locked in.</div><div class="chart-box"><canvas id="portocc"></canvas></div></div>
   <div class="tag">Community Leaderboard · Ranked by Occupancy</div>
   <div class="lbl-head">Market-rate communities</div>
   <div class="scroll-x"><table class="ptable"><thead><tr><th>Community</th><th class="r">Occupancy (11/2)</th><th class="r">Proj. Occ. (11/30)</th><th class="r">Proj. Occ. (12/31)</th><th class="r">Proj. Occ. (1/31)</th><th class="r">Proj. Occ. (2/28)</th><th class="r">Vacant Not Leased</th><th class="r">On-Notice Not Leased</th><th class="r">Apps Last Month</th><th class="r">Apps Started (wk)</th><th class="r">Move-ins (wk)</th><th>Leasing Status</th></tr></thead><tbody>
@@ -165,6 +165,7 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <tr onclick="showView('p5')"><td class="pname">The Landing at Greyhound</td><td class="r">48</td><td class="r mut">1</td></tr>
   </tbody></table></div>
   <div class="tag">Portfolio Leasing Funnel · This Week vs October Weekly Avg</div>
+  <p style="font-size:12px;color:var(--muted);margin:-4px 0 12px">Scoped to the eight EliseAI-tracked communities. C2 and DW Fund1 are not on EliseAI and are not included here.</p>
   <div class="grid2">
     <div class="panel"><h3>Market-rate communities</h3><div class="ph">High Line Pointe, Park Hill 4000, The Rowhomes, The Vista. Green above the October weekly average, red below. Dashed gold line = EliseAI Conventional conversion benchmark, scaled to this week&rsquo;s leads. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan.</div><div class="chart-box tall"><canvas id="funnelMarket"></canvas></div></div>
     <div class="panel"><h3>Income-restricted communities</h3><div class="ph">Holly38, Park Hill Station, Baker School, The Landing. Green above the October weekly average, red below. Dashed gold line = EliseAI Affordable conversion benchmark, scaled to this week&rsquo;s leads. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan.</div><div class="chart-box tall"><canvas id="funnelIncome"></canvas></div></div>
@@ -237,18 +238,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <div class="panel"><h3>Occupancy Trend</h3><div class="ph">Month-end closes through October, current at 11/2 &middot; dashed = projected month-end 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ0"></canvas></div></div>
     <div class="panel"><h3>Renewals &middot; 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 43% renewed last 6 mo</span></h3><div class="ph">Each bar is that month&rsquo;s expiring leases; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months, May to October.</div><div class="chart-box"><canvas id="ren0"></canvas></div></div>
   </div>
-  <div class="tag">Applications &middot; Last Month (October)</div>
-  <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
-    <tr><td class="pname">1281-207</td><td class="mut">Torreys Peak (A1)</td><td>akira tyler</td><td class="r">$1,650</td><td>10/30/2026</td><td>11/3/2026</td><td class="mut">Apartment List</td></tr>
-    <tr><td class="pname">1281-606</td><td class="mut">Mount Bierstadt (B3)</td><td>Abdullah Jabel, Badr Jabel, Noor Jabel</td><td class="r">$2,375</td><td>10/23/2026</td><td>11/1/2026</td><td class="mut">Drive By</td></tr>
-    <tr><td class="pname">1281-202</td><td class="mut">Bard Peak (A3)</td><td>Tyrone Walker <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$1,750</td><td>10/15/2026</td><td>11/16/2026</td><td class="mut">Website</td></tr>
-    <tr><td class="pname">1301-509</td><td class="mut">Bard Peak (A3)</td><td>Elizabeth Beyler</td><td class="r">$1,799</td><td>10/14/2026</td><td>10/24/2026</td><td class="mut">Zillow</td></tr>
-    <tr><td class="pname">1281-410</td><td class="mut">Mount Evans (B4)</td><td>Matan Cohen</td><td class="r">$2,199</td><td>10/7/2026</td><td>11/2/2026</td><td class="mut">Referral</td></tr>
-    <tr><td class="pname">1281-502</td><td class="mut">Bard Peak (A3)</td><td>Lidor Simhon</td><td class="r">$1,699</td><td>10/7/2026</td><td>10/15/2026</td><td class="mut">Referral</td></tr>
-    <tr><td class="pname">1301-500</td><td class="mut">Pikes Peak (B5)</td><td>Todd Ross</td><td class="r">$2,750</td><td>10/6/2026</td><td>10/10/2026</td><td class="mut">Apartment List</td></tr>
-  </tbody></table></div></div>
   <div class="tag">Renewal Pipeline</div>
-  <div class="panel"><h3>9 leases needing a decision <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; net $648/mo above market &middot; 6 overdue &middot; 3 under 30 days</span></h3><div class="ph">Live, still-open leases from ResMan&rsquo;s Expiring Leases report as of 11/2/2026: leases already past expiration plus those expiring through 11/30. Additive to the Renewals trend, not a replacement. &ldquo;Overdue&rdquo; means past lease expiration and still unresolved.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
+  <div class="panel"><h3>9 units need a renewal decision in the next 60 days, totaling $41/mo below market.</h3><div class="ph">Live, still-open (undecided) leases from ResMan&rsquo;s Expiring Leases report, as of 11/2/2026, expiring within 60 days (this week&rsquo;s export runs through 11/30). This is additive to the Renewals trend above, not a replacement: it surfaces who still needs a pricing decision, not historical renewal rates. &ldquo;Overdue&rdquo; rows are past their lease-expiration date and still unresolved in ResMan.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">1281-201</td><td>Landing Living LLC</td><td>11/18/2024</td><td class="r">$1,909</td><td class="r">$1,950</td><td class="r tri-down">-$41</td><td><span class="badge bad">Overdue</span></td></tr>
     <tr style="cursor:default"><td class="pname">1281-610</td><td>Landing Living LLC</td><td>1/17/2025</td><td class="r">$2,790</td><td class="r">$2,790</td><td class="r mut">$0</td><td><span class="badge bad">Overdue</span></td></tr>
     <tr style="cursor:default"><td class="pname">1301-217</td><td>Landing Living LLC</td><td>4/4/2025</td><td class="r">$2,583</td><td class="r">$2,450</td><td class="r tri-up">+$133</td><td><span class="badge bad">Overdue</span></td></tr>
@@ -259,14 +250,24 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <tr style="cursor:default"><td class="pname">1281-614</td><td>Eliel Asulin, Shalev Sassi</td><td>11/21/2026</td><td class="r">$2,349</td><td class="r">$2,099</td><td class="r tri-up">+$250</td><td><span class="badge warn">&lt;30 days</span></td></tr>
     <tr style="cursor:default"><td class="pname">1281-305</td><td>Mekedelawit Muluneh</td><td>11/30/2026</td><td class="r">$1,675</td><td class="r">$1,675</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
   </tbody></table></div></div>
-  <div class="tag">Marketing Subscriptions</div>
+  <div class="tag">Applications &middot; Last Month (October)</div>
+  <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
+    <tr><td class="pname">1281-207</td><td class="mut">Torreys Peak (A1)</td><td>akira tyler</td><td class="r">$1,650</td><td>10/30/2026</td><td>11/3/2026</td><td class="mut">Apartment List</td></tr>
+    <tr><td class="pname">1281-606</td><td class="mut">Mount Bierstadt (B3)</td><td>Abdullah Jabel, Badr Jabel, Noor Jabel</td><td class="r">$2,375</td><td>10/23/2026</td><td>11/1/2026</td><td class="mut">Drive By</td></tr>
+    <tr><td class="pname">1281-202</td><td class="mut">Bard Peak (A3)</td><td>Tyrone Walker <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$1,750</td><td>10/15/2026</td><td>11/16/2026</td><td class="mut">Website</td></tr>
+    <tr><td class="pname">1301-509</td><td class="mut">Bard Peak (A3)</td><td>Elizabeth Beyler</td><td class="r">$1,799</td><td>10/14/2026</td><td>10/24/2026</td><td class="mut">Zillow</td></tr>
+    <tr><td class="pname">1281-410</td><td class="mut">Mount Evans (B4)</td><td>Matan Cohen</td><td class="r">$2,199</td><td>10/7/2026</td><td>11/2/2026</td><td class="mut">Referral</td></tr>
+    <tr><td class="pname">1281-502</td><td class="mut">Bard Peak (A3)</td><td>Lidor Simhon</td><td class="r">$1,699</td><td>10/7/2026</td><td>10/15/2026</td><td class="mut">Referral</td></tr>
+    <tr><td class="pname">1301-500</td><td class="mut">Pikes Peak (B5)</td><td>Todd Ross</td><td class="r">$2,750</td><td>10/6/2026</td><td>10/10/2026</td><td class="mut">Apartment List</td></tr>
+  </tbody></table></div></div>
+  <div class="tag">EliseAI · Leasing Funnel</div>
+  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel0"></canvas></div></div>
+  <div class="tag">Current Marketing Subscriptions</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:560px"><thead><tr><th>Platform</th><th>Package</th><th class="r">Monthly Cost</th><th>Contract End</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">Apartments.com</td><td>Diamond+</td><td class="r">$6,760/mo</td><td>1/27/27</td></tr>
     <tr style="cursor:default"><td class="pname">Zillow</td><td>Signature</td><td class="r">$1,750/mo</td><td>3/27/27</td></tr>
     <tr style="cursor:default"><td class="pname">ApartmentList</td><td>Monthly + Per Lease</td><td class="r">$49/mo + $2,693/lease</td><td>Month-to-month</td></tr>
   </tbody></table></div><div class="ph" style="margin:10px 0 0">Apartments.com moved to Diamond+ this week ($6,760/mo, contract expires 1/27/2027).</div></div>
-  <div class="tag">EliseAI · Leasing Funnel</div>
-  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel0"></canvas></div></div>
   <div class="tag">The Week in Review</div>
   <div class="synopsis"><h3>Synopsis &amp; Recommendations</h3>
     <p><b style="color:#fff">High Line Pointe</b> closed October at 88.9% (168 of 189), down 5 homes from September&rsquo;s 91.5%. Two move-outs dated 10/31 take it to <b style="color:#fff">87.8% as of 11/2</b>, below the 90% line and onto Watch. 23 homes are vacant: 4 pre-leased, 18 unleased (6 one-bed, 12 two-bed) plus the VRBO admin unit, which is excluded from leasable counts. 11 are on notice (1 pre-leased, 10 unleased: 5 one-bed, 5 two-bed). With 10 move-outs against 5 move-ins scheduled through 11/30, it projects to <b style="color:#fff">85.2% at 11/30</b> and 84.7% at 12/31, flat through 2/28 with nothing yet booked further out. October brought 7 applications, 6 move-ins and 8 move-outs. Over the last six months it renewed 43% of expiring leases. November has 11 expirations: 1 signed, 2 pending, and 3 with no decision yet. 6 residents are on a lease that has already expired with no renewal on file. Last week 19 leads produced 4 tours booked and 1 attended, with 1 application started, 0 approved and 0 move-ins. EliseAI shows 10 open tasks as of 10/30 and 20 resolved last week.</p>
@@ -299,24 +300,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <div class="panel"><h3>Occupancy Trend</h3><div class="ph">Month-end closes through October, current at 11/2 &middot; dashed = projected month-end 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ1"></canvas></div></div>
     <div class="panel"><h3>Renewals &middot; 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 62% renewed last 6 mo</span></h3><div class="ph">Each bar is that month&rsquo;s expiring leases; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months, May to October.</div><div class="chart-box"><canvas id="ren1"></canvas></div></div>
   </div>
-  <div class="tag">Applications &middot; Last Month (October)</div>
-  <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
-    <tr><td class="pname">3314</td><td class="mut">1X1-TC-80</td><td>Lateashia Kirk</td><td class="r">$1,620</td><td>10/25/2026</td><td>11/3/2026</td><td class="mut">Referral</td></tr>
-    <tr><td class="pname">5311</td><td class="mut">3X2-TC-70</td><td>Yvonne Valenzuela</td><td class="r">$2,621</td><td>10/22/2026</td><td>12/1/2026</td><td class="mut">Online Search</td></tr>
-    <tr><td class="pname">D1-115</td><td class="mut">4X2.5-TC-70</td><td>Martin Yuncoza Rosales</td><td class="r">$2,924</td><td>10/22/2026</td><td>10/30/2026</td><td class="mut">Referral</td></tr>
-    <tr><td class="pname">D1-106</td><td class="mut">4X2.5-TC-70</td><td>Alyissa Parrott</td><td class="r">$2,924</td><td>10/21/2026</td><td>11/2/2026</td><td class="mut">Referral</td></tr>
-    <tr><td class="pname">1301</td><td class="mut">2X2-TC-70</td><td>Valerie Garcia</td><td class="r">$2,089</td><td>10/19/2026</td><td>10/30/2026</td><td class="mut">Referral</td></tr>
-    <tr><td class="pname">2205</td><td class="mut">2X2-TC-70</td><td>Paul Rose</td><td class="r">$2,169</td><td>10/19/2026</td><td>10/20/2026</td><td class="mut">Drive By</td></tr>
-    <tr><td class="pname">D1-117</td><td class="mut">4X2.5-TC-70</td><td>Miranda Martinez <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$2,924</td><td>10/15/2026</td><td>11/3/2026</td><td class="mut">Drive By</td></tr>
-    <tr><td class="pname">4212</td><td class="mut">2X2-TC-70</td><td>Chitawana Jones <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$2,089</td><td>10/14/2026</td><td>11/3/2026</td><td class="mut">Referral</td></tr>
-    <tr><td class="pname">D1-106</td><td class="mut">4X2.5-TC-70</td><td>Stacey Lee</td><td class="r">$2,924</td><td>10/9/2026</td><td>10/9/2026</td><td class="mut">Drive By</td></tr>
-    <tr><td class="pname">5109</td><td class="mut">2X2-TC-80</td><td>Jocelyn Gamboa Novoa</td><td class="r">$2,169</td><td>10/8/2026</td><td>10/23/2026</td><td class="mut">Referral</td></tr>
-    <tr><td class="pname">1301</td><td class="mut">2X2-TC-70</td><td>Nicole Stubblefield</td><td class="r">$2,089</td><td>10/7/2026</td><td>10/23/2026</td><td class="mut">Drive By</td></tr>
-    <tr><td class="pname">2211</td><td class="mut">3X2-TC-70</td><td>Brittany Jenkins</td><td class="r">$2,621</td><td>10/6/2026</td><td>11/2/2026</td><td class="mut">Drive By</td></tr>
-    <tr><td class="pname">6103</td><td class="mut">1X1-TC-60</td><td>Kyla Shepard <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$1,620</td><td>10/6/2026</td><td>10/9/2026</td><td class="mut">Drive By</td></tr>
-  </tbody></table></div></div>
   <div class="tag">Renewal Pipeline</div>
-  <div class="panel"><h3>28 leases needing a decision <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; net $3,270/mo below market &middot; 12 overdue &middot; 16 under 30 days</span></h3><div class="ph">Live, still-open leases from ResMan&rsquo;s Expiring Leases report as of 11/2/2026: leases already past expiration plus those expiring through 11/30. Additive to the Renewals trend, not a replacement. &ldquo;Overdue&rdquo; means past lease expiration and still unresolved.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
+  <div class="panel"><h3>28 units need a renewal decision in the next 60 days, totaling $3,874/mo below market.</h3><div class="ph">Live, still-open (undecided) leases from ResMan&rsquo;s Expiring Leases report, as of 11/2/2026, expiring within 60 days (this week&rsquo;s export runs through 11/30). This is additive to the Renewals trend above, not a replacement: it surfaces who still needs a pricing decision, not historical renewal rates. &ldquo;Overdue&rdquo; rows are past their lease-expiration date and still unresolved in ResMan.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">5308</td><td>Latoshake Jones</td><td>6/30/2026</td><td class="r">$1,576</td><td class="r">$972</td><td class="r tri-up">+$604</td><td><span class="badge bad">Overdue</span></td></tr>
     <tr style="cursor:default"><td class="pname">3316</td><td>Janeel Williams</td><td>7/31/2026</td><td class="r">$2,549</td><td class="r">$2,621</td><td class="r tri-down">-$72</td><td><span class="badge bad">Overdue</span></td></tr>
     <tr style="cursor:default"><td class="pname">5310</td><td>Nahim Nahle</td><td>7/31/2026</td><td class="r">$2,054</td><td class="r">$2,169</td><td class="r tri-down">-$115</td><td><span class="badge bad">Overdue</span></td></tr>
@@ -346,14 +331,30 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <tr style="cursor:default"><td class="pname">6303</td><td>Ellen Brown</td><td>11/30/2026</td><td class="r">$1,576</td><td class="r">$1,831</td><td class="r tri-down">-$255</td><td><span class="badge warn">&lt;30 days</span></td></tr>
     <tr style="cursor:default"><td class="pname">6306</td><td>Ali Kariem</td><td>11/30/2026</td><td class="r">$1,576</td><td class="r">$1,831</td><td class="r tri-down">-$255</td><td><span class="badge warn">&lt;30 days</span></td></tr>
   </tbody></table></div></div>
-  <div class="tag">Marketing Subscriptions</div>
+  <div class="tag">Applications &middot; Last Month (October)</div>
+  <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
+    <tr><td class="pname">3314</td><td class="mut">1X1-TC-80</td><td>Lateashia Kirk</td><td class="r">$1,620</td><td>10/25/2026</td><td>11/3/2026</td><td class="mut">Referral</td></tr>
+    <tr><td class="pname">5311</td><td class="mut">3X2-TC-70</td><td>Yvonne Valenzuela</td><td class="r">$2,621</td><td>10/22/2026</td><td>12/1/2026</td><td class="mut">Online Search</td></tr>
+    <tr><td class="pname">D1-115</td><td class="mut">4X2.5-TC-70</td><td>Martin Yuncoza Rosales</td><td class="r">$2,924</td><td>10/22/2026</td><td>10/30/2026</td><td class="mut">Referral</td></tr>
+    <tr><td class="pname">D1-106</td><td class="mut">4X2.5-TC-70</td><td>Alyissa Parrott</td><td class="r">$2,924</td><td>10/21/2026</td><td>11/2/2026</td><td class="mut">Referral</td></tr>
+    <tr><td class="pname">1301</td><td class="mut">2X2-TC-70</td><td>Valerie Garcia</td><td class="r">$2,089</td><td>10/19/2026</td><td>10/30/2026</td><td class="mut">Referral</td></tr>
+    <tr><td class="pname">2205</td><td class="mut">2X2-TC-70</td><td>Paul Rose</td><td class="r">$2,169</td><td>10/19/2026</td><td>10/20/2026</td><td class="mut">Drive By</td></tr>
+    <tr><td class="pname">D1-117</td><td class="mut">4X2.5-TC-70</td><td>Miranda Martinez <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$2,924</td><td>10/15/2026</td><td>11/3/2026</td><td class="mut">Drive By</td></tr>
+    <tr><td class="pname">4212</td><td class="mut">2X2-TC-70</td><td>Chitawana Jones <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$2,089</td><td>10/14/2026</td><td>11/3/2026</td><td class="mut">Referral</td></tr>
+    <tr><td class="pname">D1-106</td><td class="mut">4X2.5-TC-70</td><td>Stacey Lee</td><td class="r">$2,924</td><td>10/9/2026</td><td>10/9/2026</td><td class="mut">Drive By</td></tr>
+    <tr><td class="pname">5109</td><td class="mut">2X2-TC-80</td><td>Jocelyn Gamboa Novoa</td><td class="r">$2,169</td><td>10/8/2026</td><td>10/23/2026</td><td class="mut">Referral</td></tr>
+    <tr><td class="pname">1301</td><td class="mut">2X2-TC-70</td><td>Nicole Stubblefield</td><td class="r">$2,089</td><td>10/7/2026</td><td>10/23/2026</td><td class="mut">Drive By</td></tr>
+    <tr><td class="pname">2211</td><td class="mut">3X2-TC-70</td><td>Brittany Jenkins</td><td class="r">$2,621</td><td>10/6/2026</td><td>11/2/2026</td><td class="mut">Drive By</td></tr>
+    <tr><td class="pname">6103</td><td class="mut">1X1-TC-60</td><td>Kyla Shepard <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$1,620</td><td>10/6/2026</td><td>10/9/2026</td><td class="mut">Drive By</td></tr>
+  </tbody></table></div></div>
+  <div class="tag">EliseAI · Leasing Funnel</div>
+  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel1"></canvas></div></div>
+  <div class="tag">Current Marketing Subscriptions</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:560px"><thead><tr><th>Platform</th><th>Package</th><th class="r">Monthly Cost</th><th>Contract End</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">Apartments.com</td><td>Inactive (was Gold)</td><td class="r">$0/mo</td><td>Inactive since 6/1/26</td></tr>
     <tr style="cursor:default"><td class="pname">Zillow</td><td>Premium</td><td class="r">$1,320/mo</td><td>8/19/27</td></tr>
     <tr style="cursor:default"><td class="pname">ApartmentList</td><td>Monthly + Per Lease</td><td class="r">$69/mo + $2,235/lease</td><td>Month-to-month</td></tr>
   </tbody></table></div></div>
-  <div class="tag">EliseAI · Leasing Funnel</div>
-  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel1"></canvas></div></div>
   <div class="tag">The Week in Review</div>
   <div class="synopsis"><h3>Synopsis &amp; Recommendations</h3>
     <p><b style="color:#fff">Holly38</b> closed October at 91.9% (226 of 246), down 4 homes from September&rsquo;s 93.5%, and holds there as of 11/2. 20 homes are vacant: 8 pre-leased and 12 unleased (9 one-bed, 3 two-bed); 7 homes are also flagged Down in ResMan. The notice file is light at 2 unleased (both one-bed). Booked move-ins carry it to <b style="color:#fff">93.9% at 11/30</b> and <b style="color:#fff">94.3% at 12/31</b>, holding through 2/28. October brought 13 applications (4 cancelled), 8 move-ins and 6 move-outs. Over the last six months it renewed 62% of expiring leases. November has 30 expirations: 3 signed, 2 pending, and 16 with no decision yet. 12 residents are on a lease that has already expired with no renewal on file. Last week 23 leads produced 2 tours booked and 3 attended, with 1 application started, 2 approved and 2 move-ins. EliseAI shows 12 open tasks as of 10/30 and 58 resolved last week.</p>
@@ -386,6 +387,10 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <div class="panel"><h3>Occupancy Trend</h3><div class="ph">Month-end closes through October, current at 11/2 &middot; dashed = projected month-end 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ2"></canvas></div></div>
     <div class="panel"><h3>Renewals &middot; 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 52% renewed last 6 mo</span></h3><div class="ph">Each bar is that month&rsquo;s expiring leases; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months, May to October.</div><div class="chart-box"><canvas id="ren2"></canvas></div></div>
   </div>
+  <div class="tag">Renewal Pipeline</div>
+  <div class="panel"><h3>1 unit needs a renewal decision in the next 60 days, totaling $53/mo below market.</h3><div class="ph">Live, still-open (undecided) leases from ResMan&rsquo;s Expiring Leases report, as of 11/2/2026, expiring within 60 days (this week&rsquo;s export runs through 11/30). This is additive to the Renewals trend above, not a replacement: it surfaces who still needs a pricing decision, not historical renewal rates. &ldquo;Overdue&rdquo; rows are past their lease-expiration date and still unresolved in ResMan.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
+    <tr style="cursor:default"><td class="pname">234</td><td>Jeanne Msafiri</td><td>10/31/2026</td><td class="r">$1,891</td><td class="r">$1,944</td><td class="r tri-down">-$53</td><td><span class="badge bad">Overdue</span></td></tr>
+  </tbody></table></div></div>
   <div class="tag">Applications &middot; Last Month (October)</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
     <tr><td class="pname">346</td><td class="mut">2X2-TC-60</td><td>Oscar Manchego Suarez</td><td class="r">$1,891</td><td>10/27/2026</td><td>11/2/2026</td><td class="mut">Drive By</td></tr>
@@ -394,18 +399,14 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <tr><td class="pname">126</td><td class="mut">2X2-TC-60</td><td>Henry Davis</td><td class="r">$1,944</td><td>10/11/2026</td><td>10/23/2026</td><td class="mut">Drive By</td></tr>
     <tr><td class="pname">441</td><td class="mut">1X1-TC-60</td><td>Gloria Santos-Linares</td><td class="r">$1,620</td><td>10/8/2026</td><td>10/16/2026</td><td class="mut">Drive By</td></tr>
   </tbody></table></div></div>
-  <div class="tag">Renewal Pipeline</div>
-  <div class="panel"><h3>1 lease needing a decision <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; net $53/mo below market &middot; 1 overdue &middot; 0 under 30 days</span></h3><div class="ph">Live, still-open leases from ResMan&rsquo;s Expiring Leases report as of 11/2/2026: leases already past expiration plus those expiring through 11/30. Additive to the Renewals trend, not a replacement. &ldquo;Overdue&rdquo; means past lease expiration and still unresolved.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
-    <tr style="cursor:default"><td class="pname">234</td><td>Jeanne Msafiri</td><td>10/31/2026</td><td class="r">$1,891</td><td class="r">$1,944</td><td class="r tri-down">-$53</td><td><span class="badge bad">Overdue</span></td></tr>
-  </tbody></table></div></div>
-  <div class="tag">Marketing Subscriptions</div>
+  <div class="tag">EliseAI · Leasing Funnel</div>
+  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel2"></canvas></div></div>
+  <div class="tag">Current Marketing Subscriptions</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:560px"><thead><tr><th>Platform</th><th>Package</th><th class="r">Monthly Cost</th><th>Contract End</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">Apartments.com</td><td>Gold+</td><td class="r">$1,379/mo</td><td>6/2/27</td></tr>
     <tr style="cursor:default"><td class="pname">Zillow</td><td>Premium</td><td class="r">$1,115/mo</td><td>3/27/27</td></tr>
     <tr style="cursor:default"><td class="pname">ApartmentList</td><td>Monthly + Per Lease</td><td class="r">$49/mo + $494/lease</td><td>Month-to-month</td></tr>
   </tbody></table></div></div>
-  <div class="tag">EliseAI · Leasing Funnel</div>
-  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel2"></canvas></div></div>
   <div class="tag">The Week in Review</div>
   <div class="synopsis"><h3>Synopsis &amp; Recommendations</h3>
     <p><b style="color:#fff">Park Hill Station</b> closed October at 93.6% (146 of 156), up 2 homes, tied with Park Hill 4000 for the best month in the portfolio. 10 homes are vacant: 3 pre-leased and 7 unleased (1 one-bed, 5 two-bed, 1 three-bed), with no homes on notice. It projects to a portfolio-best <b style="color:#fff">95.5% at 11/30</b> and holds there through 2/28. October brought 5 move-ins against 1 move-out, but 5 new applications were outpaced by 8 cancellations, a net of -3. Over the last six months it renewed 52% of expiring leases. November has 8 expirations: 4 signed, 1 pending, with none left undecided. 1 resident is on a lease that has already expired with no renewal on file. Last week 23 leads produced 6 tours booked and 2 attended, with 1 application started, 1 approved and 1 move-in. EliseAI shows 25 open tasks as of 10/30 and 27 resolved last week.</p>
@@ -437,19 +438,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <div class="panel"><h3>Occupancy Trend</h3><div class="ph">Month-end closes through October, current at 11/2 &middot; dashed = projected month-end 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ3"></canvas></div></div>
     <div class="panel"><h3>Renewals &middot; 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 45% renewed last 6 mo</span></h3><div class="ph">Each bar is that month&rsquo;s expiring leases; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months, May to October.</div><div class="chart-box"><canvas id="ren3"></canvas></div></div>
   </div>
-  <div class="tag">Applications &middot; Last Month (October)</div>
-  <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
-    <tr><td class="pname">D108</td><td class="mut">Birch (B1)</td><td>Essence Mcdonald-Rose, Paul Rose</td><td class="r">$2,059</td><td>10/27/2026</td><td>10/30/2026</td><td class="mut">Drive By</td></tr>
-    <tr><td class="pname">A207</td><td class="mut">Cherry (B2)</td><td>Cristian Torreglosa, Luis Torreglosa, Cristian Torreglosa</td><td class="r">$2,250</td><td>10/26/2026</td><td>10/30/2026</td><td class="mut">Zillow</td></tr>
-    <tr><td class="pname">C306</td><td class="mut">Ash (A1)</td><td>Brian Lazos, VIctoria Menchaca-Rodriguez</td><td class="r">$1,550</td><td>10/24/2026</td><td>11/13/2026</td><td class="mut">Zillow</td></tr>
-    <tr><td class="pname">C303</td><td class="mut">Ash (A1)</td><td>Mark Lucero</td><td class="r">$1,599</td><td>10/23/2026</td><td>11/2/2026</td><td class="mut">Drive By</td></tr>
-    <tr><td class="pname">C303</td><td class="mut">Ash (A1)</td><td>Lukas Vessels</td><td class="r">$1,599</td><td>10/16/2026</td><td>10/16/2026</td><td class="mut">Apartments.com</td></tr>
-    <tr><td class="pname">C301</td><td class="mut">Birch (B1)</td><td>Shee Yusuf</td><td class="r">$2,080</td><td>10/6/2026</td><td>10/29/2026</td><td class="mut">Zillow</td></tr>
-    <tr><td class="pname">A108</td><td class="mut">Birch (AB1)</td><td>Tiara Risby <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$2,130</td><td>10/1/2026</td><td>11/18/2026</td><td class="mut">www.apartments.com</td></tr>
-    <tr><td class="pname">C308</td><td class="mut">Birch (AB1)</td><td>Natalie Ealy, Cherysh Hewing <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$2,080</td><td>10/1/2026</td><td>10/16/2026</td><td class="mut">Drive By</td></tr>
-  </tbody></table></div></div>
   <div class="tag">Renewal Pipeline</div>
-  <div class="panel"><h3>10 leases needing a decision <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; net $247/mo above market &middot; 6 overdue &middot; 4 under 30 days</span></h3><div class="ph">Live, still-open leases from ResMan&rsquo;s Expiring Leases report as of 11/2/2026: leases already past expiration plus those expiring through 11/30. Additive to the Renewals trend, not a replacement. &ldquo;Overdue&rdquo; means past lease expiration and still unresolved.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
+  <div class="panel"><h3>10 units need a renewal decision in the next 60 days, totaling $198/mo below market.</h3><div class="ph">Live, still-open (undecided) leases from ResMan&rsquo;s Expiring Leases report, as of 11/2/2026, expiring within 60 days (this week&rsquo;s export runs through 11/30). This is additive to the Renewals trend above, not a replacement: it surfaces who still needs a pricing decision, not historical renewal rates. &ldquo;Overdue&rdquo; rows are past their lease-expiration date and still unresolved in ResMan.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">E307</td><td>Rodney Jones</td><td>8/5/2026</td><td class="r">$2,635</td><td class="r">$2,460</td><td class="r tri-up">+$175</td><td><span class="badge bad">Overdue</span></td></tr>
     <tr style="cursor:default"><td class="pname">B205</td><td>Darren Trzaskoma</td><td>8/18/2026</td><td class="r">$1,897</td><td class="r">$2,005</td><td class="r tri-down">-$108</td><td><span class="badge bad">Overdue</span></td></tr>
     <tr style="cursor:default"><td class="pname">B303</td><td>Hello Landing, Debra Aubol, Abdellatif Lamniai, Anthony Talavera</td><td>10/21/2026</td><td class="r">$2,075</td><td class="r">$2,075</td><td class="r mut">$0</td><td><span class="badge bad">Overdue</span></td></tr>
@@ -461,14 +451,25 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <tr style="cursor:default"><td class="pname">E306</td><td>Brooke Nahsohn, Ariel Montellano</td><td>11/30/2026</td><td class="r">$2,095</td><td class="r">$2,095</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
     <tr style="cursor:default"><td class="pname">F305</td><td>Reggie Kinman</td><td>11/30/2026</td><td class="r">$1,799</td><td class="r">$1,799</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
   </tbody></table></div></div>
-  <div class="tag">Marketing Subscriptions</div>
+  <div class="tag">Applications &middot; Last Month (October)</div>
+  <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
+    <tr><td class="pname">D108</td><td class="mut">Birch (B1)</td><td>Essence Mcdonald-Rose, Paul Rose</td><td class="r">$2,059</td><td>10/27/2026</td><td>10/30/2026</td><td class="mut">Drive By</td></tr>
+    <tr><td class="pname">A207</td><td class="mut">Cherry (B2)</td><td>Cristian Torreglosa, Luis Torreglosa, Cristian Torreglosa</td><td class="r">$2,250</td><td>10/26/2026</td><td>10/30/2026</td><td class="mut">Zillow</td></tr>
+    <tr><td class="pname">C306</td><td class="mut">Ash (A1)</td><td>Brian Lazos, VIctoria Menchaca-Rodriguez</td><td class="r">$1,550</td><td>10/24/2026</td><td>11/13/2026</td><td class="mut">Zillow</td></tr>
+    <tr><td class="pname">C303</td><td class="mut">Ash (A1)</td><td>Mark Lucero</td><td class="r">$1,599</td><td>10/23/2026</td><td>11/2/2026</td><td class="mut">Drive By</td></tr>
+    <tr><td class="pname">C303</td><td class="mut">Ash (A1)</td><td>Lukas Vessels</td><td class="r">$1,599</td><td>10/16/2026</td><td>10/16/2026</td><td class="mut">Apartments.com</td></tr>
+    <tr><td class="pname">C301</td><td class="mut">Birch (B1)</td><td>Shee Yusuf</td><td class="r">$2,080</td><td>10/6/2026</td><td>10/29/2026</td><td class="mut">Zillow</td></tr>
+    <tr><td class="pname">A108</td><td class="mut">Birch (AB1)</td><td>Tiara Risby <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$2,130</td><td>10/1/2026</td><td>11/18/2026</td><td class="mut">www.apartments.com</td></tr>
+    <tr><td class="pname">C308</td><td class="mut">Birch (AB1)</td><td>Natalie Ealy, Cherysh Hewing <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$2,080</td><td>10/1/2026</td><td>10/16/2026</td><td class="mut">Drive By</td></tr>
+  </tbody></table></div></div>
+  <div class="tag">EliseAI · Leasing Funnel</div>
+  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel3"></canvas></div></div>
+  <div class="tag">Current Marketing Subscriptions</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:560px"><thead><tr><th>Platform</th><th>Package</th><th class="r">Monthly Cost</th><th>Contract End</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">Apartments.com</td><td>Diamond</td><td class="r">$2,589/mo</td><td>6/2/27</td></tr>
     <tr style="cursor:default"><td class="pname">Zillow</td><td>Signature</td><td class="r">$1,750/mo</td><td>3/27/27</td></tr>
     <tr style="cursor:default"><td class="pname">ApartmentList</td><td>Monthly + Per Lease</td><td class="r">$49/mo + $1,490/lease</td><td>Month-to-month</td></tr>
   </tbody></table></div></div>
-  <div class="tag">EliseAI · Leasing Funnel</div>
-  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel3"></canvas></div></div>
   <div class="tag">The Week in Review</div>
   <div class="synopsis"><h3>Synopsis &amp; Recommendations</h3>
     <p><b style="color:#fff">Park Hill 4000</b> closed October at 90.4% (151 of 167), up 2 homes and back above 90%, but moves to Watch on its forward book. 16 homes are vacant (3 pre-leased, 13 unleased: 7 one-bed, 6 two-bed) and 13 are on notice (1 pre-leased, 12 unleased: 8 one-bed, 4 two-bed). With 9 move-outs against 4 move-ins through 11/30, it projects to <b style="color:#fff">87.4% at 11/30</b> and <b style="color:#fff">85.0% at 12/31</b>, flat after that. October brought 8 applications, 7 move-ins and 4 move-outs. Over the last six months it renewed 45% of expiring leases. November has 17 expirations: 3 signed, 3 pending, and 4 with no decision yet. 6 residents are on a lease that has already expired with no renewal on file. Last week 34 leads produced 9 tours booked and 4 attended, with 2 applications started, 3 approved and 2 move-ins. EliseAI shows 40 open tasks as of 10/30 and 20 resolved last week.</p>
@@ -501,6 +502,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <div class="panel"><h3>Occupancy Trend</h3><div class="ph">Month-end closes through October, current at 11/2 &middot; dashed = projected month-end 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ4"></canvas></div></div>
     <div class="panel"><h3>Renewals &middot; 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 60% renewed last 6 mo</span></h3><div class="ph">Each bar is that month&rsquo;s expiring leases; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months, May to October.</div><div class="chart-box"><canvas id="ren4"></canvas></div></div>
   </div>
+  <div class="tag">Renewal Pipeline</div>
+  <div class="panel"><h3>No units currently need a renewal decision in the next 60 days.</h3><div class="ph">Live, still-open (undecided) leases from ResMan&rsquo;s Expiring Leases report, as of 11/2/2026, expiring within 60 days (this week&rsquo;s export runs through 11/30). This is additive to the Renewals trend above, not a replacement: it surfaces who still needs a pricing decision, not historical renewal rates. &ldquo;Overdue&rdquo; rows are past their lease-expiration date and still unresolved in ResMan.</div></div>
   <div class="tag">Applications &middot; Last Month (October)</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
     <tr><td class="pname">2308</td><td class="mut">2X2-TC-60</td><td>Elisha Cdebaca</td><td class="r">$1,944</td><td>10/27/2026</td><td>11/2/2026</td><td class="mut">Online Search</td></tr>
@@ -511,16 +514,14 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <tr><td class="pname">Waitlist_2X2</td><td class="mut">2X2-TC-60</td><td>Caleb Lopez</td><td class="r">$1,944</td><td>10/13/2026</td><td>10/13/2026</td><td class="mut">Website</td></tr>
     <tr><td class="pname">2303</td><td class="mut">2X2-TC-60</td><td>Ruben Orta</td><td class="r">$1,799</td><td>10/6/2026</td><td>11/4/2026</td><td class="mut">Drive By</td></tr>
   </tbody></table></div></div>
-  <div class="tag">Renewal Pipeline</div>
-  <div class="panel"><h3>No open expirations</h3><div class="ph">Live, still-open leases from ResMan&rsquo;s Expiring Leases report as of 11/2/2026: leases already past expiration plus those expiring through 11/30. Additive to the Renewals trend, not a replacement. &ldquo;Overdue&rdquo; means past lease expiration and still unresolved.</div></div>
-  <div class="tag">Marketing Subscriptions</div>
+  <div class="tag">EliseAI · Leasing Funnel</div>
+  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel4"></canvas></div></div>
+  <div class="tag">Current Marketing Subscriptions</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:560px"><thead><tr><th>Platform</th><th>Package</th><th class="r">Monthly Cost</th><th>Contract End</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">Apartments.com</td><td>Silver</td><td class="r">$629/mo</td><td>3/31/27</td></tr>
     <tr style="cursor:default"><td class="pname">Zillow</td><td>Premium</td><td class="r">$1,115/mo</td><td>3/27/27</td></tr>
     <tr style="cursor:default"><td class="pname">ApartmentList</td><td>Monthly + Per Lease</td><td class="r">$49/mo + $494/lease</td><td>Month-to-month</td></tr>
   </tbody></table></div></div>
-  <div class="tag">EliseAI · Leasing Funnel</div>
-  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel4"></canvas></div></div>
   <div class="tag">The Week in Review</div>
   <div class="synopsis"><h3>Synopsis &amp; Recommendations</h3>
     <p><b style="color:#fff">Baker School Apartments</b> closed October at 90.8% (129 of 142), flat with September, and sits at 90.1% as of 11/2 after a 10/31 move-out. 14 homes are vacant: 4 pre-leased and 10 unleased (3 one-bed, 7 two-bed), with 1 unleased notice (one-bed). Booked move-ins lift it to <b style="color:#fff">92.3% at 11/30</b>, holding through 2/28. October was quiet on the move-in side (1 move-in, 2 move-outs), and its 7 new applications were matched by 7 cancellations. Over the last six months it renewed 60% of expiring leases. November has 17 expirations: 4 signed, 11 pending, with none left undecided. Last week 12 leads produced 4 tours booked and 3 attended, with 2 applications started, 0 approved and 0 move-ins. EliseAI shows 4 open tasks as of 10/30 and 45 resolved last week.</p>
@@ -552,6 +553,14 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <div class="panel"><h3>Occupancy Trend</h3><div class="ph">Month-end closes through October, current at 11/2 &middot; dashed = projected month-end 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ5"></canvas></div></div>
     <div class="panel"><h3>Renewals &middot; 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 58% renewed last 6 mo</span></h3><div class="ph">Each bar is that month&rsquo;s expiring leases; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months, May to October.</div><div class="chart-box"><canvas id="ren5"></canvas></div></div>
   </div>
+  <div class="tag">Renewal Pipeline</div>
+  <div class="panel"><h3>5 units need a renewal decision in the next 60 days, totaling $0/mo below market.</h3><div class="ph">Live, still-open (undecided) leases from ResMan&rsquo;s Expiring Leases report, as of 11/2/2026, expiring within 60 days (this week&rsquo;s export runs through 11/30). This is additive to the Renewals trend above, not a replacement: it surfaces who still needs a pricing decision, not historical renewal rates. &ldquo;Overdue&rdquo; rows are past their lease-expiration date and still unresolved in ResMan.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
+    <tr style="cursor:default"><td class="pname">146</td><td>Karen Perez-Reyes</td><td>11/30/2026</td><td class="r">$1,620</td><td class="r">$1,620</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
+    <tr style="cursor:default"><td class="pname">219</td><td>Silvia Baca Miramontes</td><td>11/30/2026</td><td class="r">$1,944</td><td class="r">$1,944</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
+    <tr style="cursor:default"><td class="pname">236</td><td>Darwin Carrillo Pineda</td><td>11/30/2026</td><td class="r">$1,512</td><td class="r">$1,512</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
+    <tr style="cursor:default"><td class="pname">316</td><td>Jesus Ramirez Gil</td><td>11/30/2026</td><td class="r">$1,944</td><td class="r">$1,944</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
+    <tr style="cursor:default"><td class="pname">357</td><td>Santiago Perez</td><td>11/30/2026</td><td class="r">$1,944</td><td class="r">$1,944</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
+  </tbody></table></div></div>
   <div class="tag">Applications &middot; Last Month (October)</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
     <tr><td class="pname">222</td><td class="mut">B2-2X2-TC-60</td><td>Jaime Balderrama Nieto</td><td class="r">$1,944</td><td>10/30/2026</td><td>11/13/2026</td><td class="mut">Referral</td></tr>
@@ -561,22 +570,14 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <tr><td class="pname">426</td><td class="mut">A1-1X1-TC-60</td><td>Oswaldo Morales Valdez</td><td class="r">$1,620</td><td>10/2/2026</td><td>10/23/2026</td><td class="mut">Referral</td></tr>
     <tr><td class="pname">441</td><td class="mut">B1-2X1-TC-60</td><td>Juan Valerio Quezada <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$1,944</td><td>10/2/2026</td><td>10/2/2026</td><td class="mut">Drive By</td></tr>
   </tbody></table></div></div>
-  <div class="tag">Renewal Pipeline</div>
-  <div class="panel"><h3>5 leases needing a decision <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; net at market &middot; 0 overdue &middot; 5 under 30 days</span></h3><div class="ph">Live, still-open leases from ResMan&rsquo;s Expiring Leases report as of 11/2/2026: leases already past expiration plus those expiring through 11/30. Additive to the Renewals trend, not a replacement. &ldquo;Overdue&rdquo; means past lease expiration and still unresolved.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
-    <tr style="cursor:default"><td class="pname">146</td><td>Karen Perez-Reyes</td><td>11/30/2026</td><td class="r">$1,620</td><td class="r">$1,620</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
-    <tr style="cursor:default"><td class="pname">219</td><td>Silvia Baca Miramontes</td><td>11/30/2026</td><td class="r">$1,944</td><td class="r">$1,944</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
-    <tr style="cursor:default"><td class="pname">236</td><td>Darwin Carrillo Pineda</td><td>11/30/2026</td><td class="r">$1,512</td><td class="r">$1,512</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
-    <tr style="cursor:default"><td class="pname">316</td><td>Jesus Ramirez Gil</td><td>11/30/2026</td><td class="r">$1,944</td><td class="r">$1,944</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
-    <tr style="cursor:default"><td class="pname">357</td><td>Santiago Perez</td><td>11/30/2026</td><td class="r">$1,944</td><td class="r">$1,944</td><td class="r mut">$0</td><td><span class="badge warn">&lt;30 days</span></td></tr>
-  </tbody></table></div></div>
-  <div class="tag">Marketing Subscriptions</div>
+  <div class="tag">EliseAI · Leasing Funnel</div>
+  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel5"></canvas></div></div>
+  <div class="tag">Current Marketing Subscriptions</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:560px"><thead><tr><th>Platform</th><th>Package</th><th class="r">Monthly Cost</th><th>Contract End</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">Apartments.com</td><td>Gold+</td><td class="r">$1,247/mo</td><td>12/31/26</td></tr>
     <tr style="cursor:default"><td class="pname">Zillow</td><td>Premium</td><td class="r">$1,115/mo</td><td>3/27/27</td></tr>
     <tr style="cursor:default"><td class="pname">ApartmentList</td><td>Monthly + Per Lease</td><td class="r">$69/mo + $494/lease</td><td>Month-to-month</td></tr>
   </tbody></table></div></div>
-  <div class="tag">EliseAI · Leasing Funnel</div>
-  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel5"></canvas></div></div>
   <div class="tag">The Week in Review</div>
   <div class="synopsis"><h3>Synopsis &amp; Recommendations</h3>
     <p><b style="color:#fff">The Landing at Greyhound Park</b> closed October at 91.5% (204 of 223), down 1 home, and holds there as of 11/2. 19 homes are vacant: 6 pre-leased and 13 unleased (1 studio, 1 one-bed, 11 two-bed). 8 are on notice, all unleased (3 one-bed, 4 two-bed, 1 three-bed). With 8 move-outs against 5 move-ins through 11/30 it dips to <b style="color:#fff">90.1%</b>, then recovers to 90.6% at 12/31 and holds. October brought 6 applications, 5 move-ins and 4 move-outs. Over the last six months it renewed 58% of expiring leases. November has 40 expirations: 10 signed, 12 pending, and 5 with no decision yet. Last week 23 leads produced 5 tours booked and 0 attended, with 2 applications started, 0 approved and 0 move-ins. EliseAI shows 48 open tasks as of 10/30 and 1 resolved last week.</p>
@@ -609,6 +610,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <div class="panel"><h3>Occupancy Trend</h3><div class="ph">Month-end closes through October, current at 11/2 &middot; dashed = projected month-end 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ6"></canvas></div></div>
     <div class="panel"><h3>Renewals &middot; 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 58% renewed last 6 mo</span></h3><div class="ph">Each bar is that month&rsquo;s expiring leases; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months, May to October.</div><div class="chart-box"><canvas id="ren6"></canvas></div></div>
   </div>
+  <div class="tag">Renewal Pipeline</div>
+  <div class="panel"><h3>No units currently need a renewal decision in the next 60 days.</h3><div class="ph">Live, still-open (undecided) leases from ResMan&rsquo;s Expiring Leases report, as of 11/2/2026, expiring within 60 days (this week&rsquo;s export runs through 11/30). This is additive to the Renewals trend above, not a replacement: it surfaces who still needs a pricing decision, not historical renewal rates. &ldquo;Overdue&rdquo; rows are past their lease-expiration date and still unresolved in ResMan.</div></div>
   <div class="tag">Applications &middot; Last Month (October)</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
     <tr><td class="pname">D-6288</td><td class="mut">4X3-AFF-80</td><td>Nathan Endres</td><td class="r">$2,699</td><td>10/30/2026</td><td>11/2/2026</td><td class="mut">Zillow</td></tr>
@@ -616,16 +619,14 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <tr><td class="pname">A-5481</td><td class="mut">4X3-AFF-120</td><td>Maria Perez, Nathaniel Perez</td><td class="r">$2,799</td><td>10/27/2026</td><td>11/2/2026</td><td class="mut">Social Media</td></tr>
     <tr><td class="pname">C-6254</td><td class="mut">4X3-AFF-120</td><td>DaWon Baker</td><td class="r">$2,749</td><td>10/23/2026</td><td>11/27/2026</td><td class="mut">Apartment List</td></tr>
   </tbody></table></div></div>
-  <div class="tag">Renewal Pipeline</div>
-  <div class="panel"><h3>No open expirations</h3><div class="ph">Live, still-open leases from ResMan&rsquo;s Expiring Leases report as of 11/2/2026: leases already past expiration plus those expiring through 11/30. Additive to the Renewals trend, not a replacement. &ldquo;Overdue&rdquo; means past lease expiration and still unresolved.</div></div>
-  <div class="tag">Marketing Subscriptions</div>
+  <div class="tag">EliseAI · Leasing Funnel</div>
+  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel6"></canvas></div></div>
+  <div class="tag">Current Marketing Subscriptions</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:560px"><thead><tr><th>Platform</th><th>Package</th><th class="r">Monthly Cost</th><th>Contract End</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">Apartments.com</td><td>Platinum</td><td class="r">$1,079/mo</td><td>12/31/26</td></tr>
     <tr style="cursor:default"><td class="pname">Zillow</td><td>Premium</td><td class="r">$985/mo</td><td>4/26/27</td></tr>
     <tr style="cursor:default"><td class="pname">ApartmentList</td><td>Monthly + Per Lease</td><td class="r">$29/mo + $1,825/lease</td><td>Month-to-month</td></tr>
   </tbody></table></div></div>
-  <div class="tag">EliseAI · Leasing Funnel</div>
-  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel6"></canvas></div></div>
   <div class="tag">The Week in Review</div>
   <div class="synopsis"><h3>Synopsis &amp; Recommendations</h3>
     <p><b style="color:#fff">The Rowhomes at Greyhound Park</b> closed October at 83.6% (56 of 67), down 6 homes from September&rsquo;s 92.5%, the steepest drop in the portfolio (4 of the 6 were move-outs dated 9/30), and is now the lowest stabilized community. 11 homes are vacant: 4 pre-leased and 7 unleased, with 2 unleased notices, all 4-bed. Its 4 pre-leases lift it to <b style="color:#fff">86.6% at 11/30</b>, flat through 2/28. October brought 4 applications, no move-ins and 2 move-outs; last week added 3 applications started. At 67 homes, a single home is 1.5 pp of occupancy. Over the last six months it renewed 58% of expiring leases. November has 1 expirations: 0 signed, 0 pending, with none left undecided. Last week 11 leads produced 6 tours booked and 2 attended, with 3 applications started, 0 approved and 0 move-ins. EliseAI shows 11 open tasks as of 10/30 and 7 resolved last week.</p>
@@ -645,8 +646,8 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="tag">Leasing Status &middot; ResMan &amp; EliseAI</div>
   <div class="kpis">
     <div class="kpi"><div class="label">Occupancy</div><div class="val">44.1%</div><div class="foot"><span>52 of 118 occupied</span><span class="chip flat">lease-up</span></div></div>
-    <div class="kpi"><div class="label">Tours Attended</div><div class="val">1</div><div class="foot"><span>vs 2.94 Oct wk avg</span><span class="chip down">&#9660; 66%</span></div></div>
-    <div class="kpi"><div class="label">Applications Started</div><div class="val">3</div><div class="foot"><span>vs 2.94 Oct wk avg</span><span class="chip up">&#9650; 2%</span></div></div>
+    <div class="kpi"><div class="label">Tours Attended</div><div class="val">1</div><div class="foot"><span>this reporting week</span><span class="chip flat">funnel</span></div></div>
+    <div class="kpi"><div class="label">Applications Started</div><div class="val">3</div><div class="foot"><span>this reporting week</span><span class="chip flat">funnel</span></div></div>
     <div class="kpi"><div class="label">Pre-leased</div><div class="val">10</div><div class="foot"><span>62 committed total</span><span class="chip up">building</span></div></div>
     <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">4</div><div class="foot"><span>vs 2.03 Oct wk avg</span><span class="chip up">&#9650; 97%</span></div></div>
   </div>
@@ -654,9 +655,11 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="panel"><div style="font-size:14px;line-height:1.6">Get $2,000 off when you apply within 48hrs after a tour. Expires 11/30.</div></div>
   <div class="tag">Trends</div>
   <div class="grid2">
-    <div class="panel"><h3>Unleased Inventory by Release Month</h3><div class="ph">The 66 homes not yet occupied, by the Date Available set in ResMan. Green = pre-leased (application in); grey = still available. Sep and Oct dates are past due (units still Not Ready). 33 of 56 available homes have no release date.</div><div class="chart-box"><canvas id="vista7"></canvas></div></div>
+    <div class="panel"><h3>Leasing by Move-in Month</h3><div class="ph">Units released by scheduled month (Date Available in ResMan). Green = pre-leased (application in); grey = still available. Sep and Oct dates are past due (units still Not Ready). 33 units do not yet have a release month assigned.</div><div class="chart-box"><canvas id="vista7"></canvas></div></div>
     <div class="panel"><h3>Lease-up Position</h3><div class="ph">A new community &middot; 118 four-bedroom townhomes.</div><div style="display:flex;flex-direction:column;gap:10px;margin-top:6px"><div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--muted)">Committed (occupied + pre-leased)</span><b style="font-family:'IBM Plex Mono'">62 / 118</b></div><div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--muted)">Occupied today</span><b style="font-family:'IBM Plex Mono'">52</b></div><div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--muted)">Available to lease</span><b style="font-family:'IBM Plex Mono'">56</b></div><p style="font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px;border-top:1px solid var(--line);padding-top:10px">53% committed. Occupancy rose by 8 homes in October (9 move-ins, 1 move-out). Booked move-ins take it to 50.0% by 11/30, 51.7% by 12/31 and 52.5% by 1/31. Of the 56 available homes, 12 release 11/16, 10 release 12/1, and 33 have no release date set.</p></div></div>
   </div>
+  <div class="tag">Renewal Pipeline</div>
+  <div class="panel"><h3>No units currently need a renewal decision in the next 60 days.</h3><div class="ph">Live, still-open (undecided) leases from ResMan&rsquo;s Expiring Leases report, as of 11/2/2026, expiring within 60 days (this week&rsquo;s export runs through 11/30). This is additive to the Renewals trend above, not a replacement: it surfaces who still needs a pricing decision, not historical renewal rates. &ldquo;Overdue&rdquo; rows are past their lease-expiration date and still unresolved in ResMan.</div></div>
   <div class="tag">Applications &middot; Last Month (October)</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
     <tr><td class="pname">5321-4</td><td class="mut">4X2.5-TC-80-A1-IN</td><td>Alinee Cortes Avendano <span class="badge warn" style="font-size:9px">Transfer</span></td><td class="r">$2,494</td><td>10/28/2026</td><td>10/29/2026</td><td class="mut">Social Media</td></tr>
@@ -673,16 +676,14 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <tr><td class="pname">5321-4</td><td class="mut">4X2.5-TC-80-A1-IN</td><td>Mya Marban</td><td class="r">$2,494</td><td>10/2/2026</td><td>10/7/2026</td><td class="mut">Apartment List</td></tr>
     <tr><td class="pname">6289-3</td><td class="mut">4X2.5-TC-80-A1-IN</td><td>Dashawn Pendleton</td><td class="r">$2,824</td><td>10/2/2026</td><td>12/26/2026</td><td class="mut">Zillow</td></tr>
   </tbody></table></div></div>
-  <div class="tag">Renewal Pipeline</div>
-  <div class="panel"><h3>No open expirations</h3><div class="ph">Live, still-open leases from ResMan&rsquo;s Expiring Leases report as of 11/2/2026: leases already past expiration plus those expiring through 11/30. Additive to the Renewals trend, not a replacement. &ldquo;Overdue&rdquo; means past lease expiration and still unresolved.</div></div>
-  <div class="tag">Marketing Subscriptions</div>
+  <div class="tag">EliseAI · Leasing Funnel</div>
+  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel7"></canvas></div></div>
+  <div class="tag">Current Marketing Subscriptions</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:560px"><thead><tr><th>Platform</th><th>Package</th><th class="r">Monthly Cost</th><th>Contract End</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">Apartments.com</td><td>Platinum</td><td class="r">$1,457/mo</td><td>3/5/27</td></tr>
     <tr style="cursor:default"><td class="pname">Zillow</td><td>Premium</td><td class="r">$950/mo</td><td>3/5/27</td></tr>
     <tr style="cursor:default"><td class="pname">ApartmentList</td><td>Monthly + Per Lease</td><td class="r">$49/mo + $494/lease</td><td>Month-to-month</td></tr>
   </tbody></table></div></div>
-  <div class="tag">EliseAI · Leasing Funnel</div>
-  <div class="panel"><h3>This Week vs October Weekly Average</h3><div class="ph">Bars are last week&rsquo;s activity, green above the October weekly average, red below. Leads through tours from EliseAI; applications, approvals and move-ins from ResMan. The dashed gold line is the EliseAI conversion benchmark for this segment, scaled to this week&rsquo;s lead volume.</div><div class="chart-box tall"><canvas id="funnel7"></canvas></div></div>
   <div class="tag">The Week in Review</div>
   <div class="synopsis"><h3>Synopsis &amp; Recommendations</h3>
     <p><b style="color:#fff">The Vista at Greyhound Park</b> added 8 homes in October (9 move-ins, 1 move-out) to reach <b style="color:#fff">52 occupied and 44.1%</b>. With 10 homes pre-leased, committed volume is <b style="color:#fff">62 of 118, 52.5%</b>. Booked move-ins take it to <b style="color:#fff">50.0% at 11/30</b>, 51.7% at 12/31 and 52.5% at 1/31, flat into February. October brought 13 applications (3 cancelled, 1 denied); last week added 3 applications started and 4 move-ins. 56 homes remain available to lease.</p>
@@ -702,18 +703,22 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="tag">Leasing Status &middot; ResMan</div>
   <div class="kpis">
     <div class="kpi"><div class="label">Occupancy</div><div class="val">76.0%</div><div class="foot"><span>6 vacant</span><span class="chip flat">current</span></div></div>
-    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">4</div><div class="foot"><span>2 pre-leased</span></div></div>
-    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">1</div><div class="foot"><span>1 pre-leased</span></div></div>
+    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">4</div><div class="bedmix"><span class="bm"><b>Gold Treasure</b> 2</span><span class="bm"><b>Good Looker</b> 2</span></div></div>
+    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">1</div><div class="bedmix"><span class="bm"><b>Gold Treasure</b> 1</span></div></div>
     <div class="kpi"><div class="label">Applications Started</div><div class="val">1</div><div class="foot"><span>vs 0.90 Oct wk avg</span><span class="chip up">&#9650; 11%</span></div></div>
-    <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">0</div><div class="foot"><span>vs 0.00 Oct wk avg</span><span class="chip flat">n/a</span></div></div>
+    <div class="kpi"><div class="label">Move-ins <span class="note">= Box Score M/I</span></div><div class="val">0</div><div class="foot"><span>vs 0.00 Oct wk avg</span><span class="chip flat">n/a</span></div></div>
   </div>
   <div class="tag">Current Concessions</div>
-  <div class="panel"><div style="font-size:14px;line-height:1.6">No concessions.</div></div>
+  <div class="panel"><div style="font-size:14px;line-height:1.6">Not offering concessions at this time.</div></div>
   <div class="tag">Trends</div>
   <div class="grid2">
     <div class="panel"><h3>Occupancy Trend</h3><div class="ph">Month-end closes Feb through October (ResMan trend starts in February), current at 11/2 &middot; dashed = projected month-end 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ8"></canvas></div></div>
     <div class="panel"><h3>Renewals &middot; 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 42% renewed last 6 mo</span></h3><div class="ph">Each bar is that month&rsquo;s expiring leases; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months, May to October.</div><div class="chart-box"><canvas id="ren8"></canvas></div></div>
   </div>
+  <div class="tag">Renewal Pipeline</div>
+  <div class="panel"><h3>1 unit needs a renewal decision in the next 60 days, totaling $65/mo below market.</h3><div class="ph">Live, still-open (undecided) leases from ResMan&rsquo;s Expiring Leases report, as of 11/2/2026, expiring within 60 days (this week&rsquo;s export runs through 11/30). This is additive to the Renewals trend above, not a replacement: it surfaces who still needs a pricing decision, not historical renewal rates. &ldquo;Overdue&rdquo; rows are past their lease-expiration date and still unresolved in ResMan.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
+    <tr style="cursor:default"><td class="pname">15-5372E</td><td>Antonio Solis-Flores, Veronica Castro</td><td>2/28/2026</td><td class="r">$3,235</td><td class="r">$3,300</td><td class="r tri-down">-$65</td><td><span class="badge bad">Overdue</span></td></tr>
+  </tbody></table></div></div>
   <div class="tag">Applications &middot; Last Month (October)</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">10-5346E</td><td class="mut">Good Looker</td><td>Rosa Vazquez</td><td class="r">$2,800</td><td>10/27/2026</td><td>11/13/2026</td><td class="mut">Referral</td></tr>
@@ -721,14 +726,38 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
     <tr style="cursor:default"><td class="pname">07-5332E</td><td class="mut">Gold Treasure</td><td>Carlos Valdez, Dezmen Nickleberry</td><td class="r">$2,900</td><td>10/8/2026</td><td>10/30/2026</td><td class="mut">Drive By</td></tr>
     <tr style="cursor:default"><td class="pname">30-5345E</td><td class="mut">Gold Treasure</td><td>Sarah IM, Chhanny IM</td><td class="r">$2,950</td><td>10/5/2026</td><td>11/27/2026</td><td class="mut">Online Search</td></tr>
   </tbody></table></div></div>
-  <div class="tag">Renewal Pipeline</div>
-  <div class="panel"><h3>1 lease needing a decision <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; net $65/mo below market &middot; 1 overdue &middot; 0 under 30 days</span></h3><div class="ph">Live, still-open leases from ResMan&rsquo;s Expiring Leases report as of 11/2/2026: leases already past expiration plus those expiring through 11/30. Additive to the Renewals trend, not a replacement. &ldquo;Overdue&rdquo; means past lease expiration and still unresolved.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
-    <tr style="cursor:default"><td class="pname">15-5372E</td><td>Antonio Solis-Flores, Veronica Castro</td><td>2/28/2026</td><td class="r">$3,235</td><td class="r">$3,300</td><td class="r tri-down">-$65</td><td><span class="badge bad">Overdue</span></td></tr>
-  </tbody></table></div></div>
-  <div class="tag">Marketing Subscriptions</div>
+  <div class="tag">Current Marketing Subscriptions</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:560px"><thead><tr><th>Platform</th><th>Package</th><th class="r">Monthly Cost</th><th>Contract End</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">Zillow</td><td>Base</td><td class="r">$60/mo</td><td>8/1/27</td></tr>
     <tr style="cursor:default"><td class="pname">ApartmentList</td><td>Monthly + Per Lease</td><td class="r">$0/mo + $494/lease</td><td>Month-to-month</td></tr>
+  </tbody></table></div></div>
+  <div class="tag">Rent Roll</div>
+  <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:900px"><thead><tr><th>Unit</th><th>Type</th><th>Residents</th><th>Status</th><th class="r">Market Rent</th><th class="r">Tenant Rent</th><th>Lease Start</th><th>Lease End</th><th>Move Out</th></tr></thead><tbody>
+    <tr style="cursor:default"><td class="pname">04-5316</td><td class="mut">Gold Treasure</td><td><span class="mut">Vacant</span></td><td></td><td class="r">$2,900</td><td class="r"></td><td></td><td></td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">06-5326E</td><td class="mut">Good Looker</td><td>Jose De La Cruz, Sandra Contreras</td><td>Current</td><td class="r">$3,250</td><td class="r">$3,000</td><td>07/01/26</td><td>06/30/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">07-5332E</td><td class="mut">Gold Treasure</td><td><span class="mut">Vacant</span></td><td></td><td class="r">$2,900</td><td class="r"></td><td></td><td></td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">08-5336E</td><td class="mut">Gold Treasure</td><td>Crystal Tafoya, David Tafoya</td><td>Current</td><td class="r">$3,300</td><td class="r">$3,200</td><td>08/01/26</td><td>07/31/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">09-5342E</td><td class="mut">Good Looker</td><td><span class="mut">Vacant</span></td><td></td><td class="r">$2,800</td><td class="r"></td><td></td><td></td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">10-5346E</td><td class="mut">Good Looker</td><td><span class="mut">Vacant</span></td><td></td><td class="r">$2,800</td><td class="r"></td><td></td><td></td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">11-5352E</td><td class="mut">Gold Treasure</td><td>Celia Rivas, Diana Rivas</td><td>Current</td><td class="r">$3,200</td><td class="r">$3,200</td><td>02/01/26</td><td>01/31/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">12-5356E</td><td class="mut">Gold Treasure</td><td>Elias Rodriguez, Nataly Moreno Mora</td><td>Current</td><td class="r">$3,300</td><td class="r">$3,160</td><td>04/01/26</td><td>03/31/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">13-5362E</td><td class="mut">Good Looker</td><td>Arnoldo Ruiz-Mendias</td><td>Current</td><td class="r">$3,250</td><td class="r">$2,750</td><td>07/01/26</td><td>06/30/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">14-5366E</td><td class="mut">Good Looker</td><td>Luis Da Silva Fernandez, Joana Sanchez Arriaga, Mauricio Sanchez Arriaga, Ana Somasa De Chacon, Erick Chacon</td><td>Current</td><td class="r">$3,000</td><td class="r">$2,950</td><td>02/01/26</td><td>01/31/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">15-5372E</td><td class="mut">Gold Treasure</td><td>Antonio Solis-Flores, Veronica Castro</td><td>Current</td><td class="r">$3,300</td><td class="r">$3,235</td><td>02/01/26</td><td>02/28/26</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">17-5382E</td><td class="mut">Good Looker</td><td>David Urbina, Maria Gutierrez Valadez</td><td>Current</td><td class="r">$3,250</td><td class="r">$3,000</td><td>12/01/25</td><td>11/30/26</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">18-5386E</td><td class="mut">Good Looker</td><td><span class="mut">Vacant</span></td><td></td><td class="r">$3,100</td><td class="r"></td><td></td><td></td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">19-5392E</td><td class="mut">Gold Treasure</td><td>Francisco Garcia Rodriguez, Laura Esquiuel Hernandez</td><td>Current</td><td class="r">$3,300</td><td class="r">$3,000</td><td>08/01/26</td><td>07/31/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">20-5396E</td><td class="mut">Gold Treasure</td><td>Kenia Vazquez, Jesus Vazquez Pallares</td><td>Current</td><td class="r">$3,300</td><td class="r">$3,300</td><td>04/17/26</td><td>03/31/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">25-5321E</td><td class="mut">Gold Treasure</td><td>Jose Gonzalez Castellanos, Jose Manriquez Valdez</td><td>Current</td><td class="r">$3,350</td><td class="r">$3,200</td><td>06/19/26</td><td>05/31/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">28-5335E</td><td class="mut">Good Looker</td><td>Isaac Garcia, Javier Garcia, Fabiola Guzman</td><td>Current</td><td class="r">$3,300</td><td class="r">$2,900</td><td>01/01/26</td><td>02/28/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">30-5345E</td><td class="mut">Gold Treasure</td><td>Yolanda Molina, Stacey Molina</td><td>Notice to Vacate</td><td class="r">$2,950</td><td class="r">$2,850</td><td>01/01/26</td><td>12/31/26</td><td>10/31/26</td></tr>
+    <tr style="cursor:default"><td class="pname">31-5351E</td><td class="mut">Good Looker</td><td>Heather Covington, Garrett Deal, Katherine King</td><td>Current</td><td class="r">$3,300</td><td class="r">$3,000</td><td>07/01/26</td><td>06/30/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">32-5355E</td><td class="mut">Good Looker</td><td>Adrian Barrera Aguirre, Jailine Barrera Gonzalez</td><td>Current</td><td class="r">$3,300</td><td class="r">$3,300</td><td>05/01/26</td><td>04/30/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">34-5365E</td><td class="mut">Gold Treasure</td><td>David Martinez, Monica Fernandez</td><td>Current</td><td class="r">$3,150</td><td class="r">$3,150</td><td>04/24/26</td><td>03/31/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">36-5375E</td><td class="mut">Good Looker</td><td>Diana Munoz</td><td>Current</td><td class="r">$3,300</td><td class="r">$3,300</td><td>01/21/26</td><td>01/20/27</td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">37-5381E</td><td class="mut">Gold Treasure</td><td><span class="mut">Vacant</span></td><td></td><td class="r">$3,200</td><td class="r"></td><td></td><td></td><td></td></tr>
+    <tr style="cursor:default"><td class="pname">38-5385E</td><td class="mut">Gold Treasure</td><td>Deivid Guerrero Pucuna, Gleidismar Gutierrez, Ricardo Quintero Guzman</td><td>Notice to Vacate</td><td class="r">$3,350</td><td class="r">$2,900</td><td>12/01/25</td><td>11/30/26</td><td>11/30/26</td></tr>
+    <tr style="cursor:default"><td class="pname">40-5395E</td><td class="mut">Good Looker</td><td>Sarai Lorenzana</td><td>Current</td><td class="r">$3,300</td><td class="r">$2,950</td><td>03/01/26</td><td>02/28/27</td><td></td></tr>
   </tbody></table></div></div>
   <div class="tag">The Week in Review</div>
   <div class="synopsis"><h3>Synopsis &amp; Recommendations</h3>
@@ -749,30 +778,32 @@ footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);display
   <div class="tag">Leasing Status &middot; ResMan</div>
   <div class="kpis">
     <div class="kpi"><div class="label">Occupancy</div><div class="val">94.1%</div><div class="foot"><span>1 vacant</span><span class="chip flat">current</span></div></div>
-    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">1</div><div class="foot"><span>0 pre-leased</span></div></div>
-    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">0</div><div class="foot"><span>0 pre-leased</span></div></div>
+    <div class="kpi"><div class="label">Vacant Not Leased</div><div class="val">1</div><div class="bedmix"><span class="bm"><b>2-bd</b> 1</span></div></div>
+    <div class="kpi"><div class="label">On-Notice Not Leased</div><div class="val">0</div><div class="bedmix"><span class="bm">No availability</span></div></div>
     <div class="kpi"><div class="label">Applications Started</div><div class="val">0</div><div class="foot"><span>vs 0.00 Oct wk avg</span><span class="chip flat">n/a</span></div></div>
-    <div class="kpi"><div class="label">Leases Signed <span class="note">= move-ins</span></div><div class="val">0</div><div class="foot"><span>vs 0.23 Oct wk avg</span><span class="chip down">&#9660; 100%</span></div></div>
+    <div class="kpi"><div class="label">Move-ins <span class="note">= Box Score M/I</span></div><div class="val">0</div><div class="foot"><span>vs 0.23 Oct wk avg</span><span class="chip down">&#9660; 100%</span></div></div>
   </div>
   <div class="tag">Current Concessions</div>
-  <div class="panel"><div style="font-size:14px;line-height:1.6">No concessions.</div></div>
+  <div class="panel"><div style="font-size:14px;line-height:1.6">Not offering concessions at this time.</div></div>
   <div class="tag">Trends</div>
   <div class="grid2">
     <div class="panel"><h3>Occupancy Trend</h3><div class="ph">Month-end closes Feb through October (ResMan trend starts in February), current at 11/2 &middot; dashed = projected month-end 11/30, 12/31, 1/31 and 2/28 from scheduled move-ins and notices</div><div class="chart-box"><canvas id="occ9"></canvas></div></div>
     <div class="panel"><h3>Renewals &middot; 6 Months Back, 6 Months Ahead <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; 62% renewed last 6 mo</span></h3><div class="ph">Each bar is that month&rsquo;s expiring leases; hover for exact counts. Dashed line is the renewed % (signed leases only, not counting Pending) for each of the 6 closed months, May to October.</div><div class="chart-box"><canvas id="ren9"></canvas></div></div>
   </div>
+  <div class="tag">Renewal Pipeline</div>
+  <div class="panel"><h3>1 unit needs a renewal decision in the next 60 days, totaling $0/mo below market.</h3><div class="ph">Live, still-open (undecided) leases from ResMan&rsquo;s Expiring Leases report, as of 11/2/2026, expiring within 60 days (this week&rsquo;s export runs through 11/30). This is additive to the Renewals trend above, not a replacement: it surfaces who still needs a pricing decision, not historical renewal rates. &ldquo;Overdue&rdquo; rows are past their lease-expiration date and still unresolved in ResMan.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
+    <tr style="cursor:default"><td class="pname">5255 Memphis #222</td><td>Dondrea Haley</td><td>11/30/2026</td><td class="r">$2,050</td><td class="r">$1,600</td><td class="r tri-up">+$450</td><td><span class="badge warn">&lt;30 days</span></td></tr>
+  </tbody></table></div></div>
   <div class="tag">Applications &middot; Last Month (October)</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:720px"><thead><tr><th>Unit</th><th>Unit Type</th><th>Name</th><th class="r">Monthly Rent</th><th>Application Date</th><th>Move-In Date</th><th>Prospect Source</th></tr></thead><tbody>
     <tr><td colspan="7" class="mut">No applications in October.</td></tr>
   </tbody></table></div></div>
-  <div class="tag">Renewal Pipeline</div>
-  <div class="panel"><h3>1 lease needing a decision <span style="color:var(--muted);font-weight:500;font-size:13px">&middot; net $450/mo above market &middot; 0 overdue &middot; 1 under 30 days</span></h3><div class="ph">Live, still-open leases from ResMan&rsquo;s Expiring Leases report as of 11/2/2026: leases already past expiration plus those expiring through 11/30. Additive to the Renewals trend, not a replacement. &ldquo;Overdue&rdquo; means past lease expiration and still unresolved.</div><div class="scroll-x"><table class="ptable" style="min-width:760px"><thead><tr><th>Unit</th><th>Resident(s)</th><th>Lease Expires</th><th class="r">Current Rent</th><th class="r">Market Rent</th><th class="r">Gap</th><th>Status</th></tr></thead><tbody>
-    <tr style="cursor:default"><td class="pname">5255 Memphis #222</td><td>Dondrea Haley</td><td>11/30/2026</td><td class="r">$2,050</td><td class="r">$1,600</td><td class="r tri-up">+$450</td><td><span class="badge warn">&lt;30 days</span></td></tr>
-  </tbody></table></div></div>
-  <div class="tag">Marketing Subscriptions</div>
+  <div class="tag">Current Marketing Subscriptions</div>
   <div class="panel"><div class="scroll-x"><table class="ptable" style="min-width:560px"><thead><tr><th>Platform</th><th>Package</th><th class="r">Monthly Cost</th><th>Contract End</th></tr></thead><tbody>
     <tr style="cursor:default"><td class="pname">Zillow</td><td>Basic</td><td class="r">$0/mo</td><td>No contract</td></tr>
   </tbody></table></div></div>
+  <div class="tag">Rent Roll</div>
+  <div class="panel"><div class="ph" style="margin:0">DW Fund 1 has no units listed in this week&rsquo;s ResMan Rent Roll export.</div></div>
   <div class="tag">The Week in Review</div>
   <div class="synopsis"><h3>Synopsis &amp; Recommendations</h3>
     <p><b style="color:#fff">DW Fund1</b> sits at <b style="color:#fff">94.1%</b> (16 of 17 homes; MHGP-C1-06 is held for sale and excluded). The one vacancy is 5255 Memphis #1223, vacant since 9/15. Nothing is on notice and the projection holds at 94.1% through 2/28. Over the last six months it renewed 62% of expiring leases; November has 2 expirations, 1 signed and 1 (5255 Memphis #222) still undecided.</p>
@@ -795,6 +826,51 @@ const renMonths=["May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Ma
 const REPORTWEEK="Oct 26 \u2013 Nov 1, 2026";
 const ink='#1c1b18',muted='#6f6a60',accent='#2b3a4a',accent2='#b08442',good='#1f8a4c',bad='#c2342c',warn='#c98a1a',line='#e4e0d6';
 Chart.defaults.font.family="'IBM Plex Sans', sans-serif";Chart.defaults.color=muted;
+
+const OCCD=["2025-12-31", "2026-01-31", "2026-02-28", "2026-03-31", "2026-04-30", "2026-05-31", "2026-06-30", "2026-07-31", "2026-08-31", "2026-09-30", "2026-10-31", "2026-11-02", "2026-11-30", "2026-12-31", "2027-01-31", "2027-02-28"];
+const D0=Date.UTC(2025,11,31);
+const dayOf=s=>{const p=s.split('-').map(Number);return (Date.UTC(p[0],p[1]-1,p[2])-D0)/864e5;};
+const OCCX=OCCD.map(dayOf);
+const fmtX=v=>{const t=new Date(D0+Math.round(v)*864e5);return (t.getUTCMonth()+1)+'/'+t.getUTCDate();};
+const XY=a=>a.map((y,i)=>({x:OCCX[i],y:y}));
+const TICKX=OCCX.filter((v,i)=>OCCD[i]!=='2026-11-02');
+const xLin={type:'linear',min:OCCX[0],max:OCCX[OCCX.length-1],grid:{display:false},afterBuildTicks:ax=>{ax.ticks=TICKX.map(v=>({value:v}));},ticks:{autoSkip:false,callback:v=>fmtX(v)}};
+const ttTitle=items=>items.length?fmtX(items[0].parsed.x):'';
+const ANN={"portocc": [{"date": "2026-09-09", "text": "13 High Line Pointe furnished units added to occupancy count"}, {"date": "2026-10-05", "text": "C2 Greyhound Park & DW Fund1 added to portfolio"}], "occ0": [{"date": "2026-09-09", "text": "13 High Line Pointe furnished units added to occupancy count"}], "occ8": [{"date": "2026-10-05", "text": "C2 Greyhound Park & DW Fund1 added to portfolio"}], "occ9": [{"date": "2026-10-05", "text": "C2 Greyhound Park & DW Fund1 added to portfolio"}]};
+const ANNRED='#b8322b';
+const annDs={label:'Annotations',data:[],backgroundColor:ANNRED,borderColor:ANNRED,pointStyle:'triangle'};
+function annPts(chart){
+  const list=ANN[chart.canvas.id]; if(!list) return [];
+  const xs=chart.scales.x, ca=chart.chartArea, labels=chart.data.labels;
+  return list.map(a=>({x:xs.getPixelForValue(dayOf(a.date)), y:ca.bottom, a:Object.assign({}, a, {date:fmtX(dayOf(a.date))+'/'+a.date.slice(0,4)})}));
+}
+Chart.register({id:'annTri',
+  afterDraw(chart){
+    const pts=annPts(chart); if(!pts.length) return;
+    const ctx=chart.ctx; ctx.save();
+    pts.forEach((p,k)=>{ctx.fillStyle=ANNRED;ctx.beginPath();ctx.moveTo(p.x,p.y-7);ctx.lineTo(p.x-5.5,p.y+1);ctx.lineTo(p.x+5.5,p.y+1);ctx.closePath();ctx.fill();});
+    const h=chart.$annHover;
+    if(h!=null && pts[h]){
+      const p=pts[h]; const l1=p.a.text, l2='\u00b7 '+p.a.date;
+      ctx.font="600 12px 'IBM Plex Sans', sans-serif";
+      // wrap text to ~2 lines
+      const words=(l1+' '+l2).split(' '); const lines=[]; let cur='';
+      words.forEach(w=>{const t=cur?cur+' '+w:w; if(ctx.measureText(t).width>230 && cur){lines.push(cur);cur=w;} else cur=t;}); if(cur) lines.push(cur);
+      const w=Math.max(...lines.map(t=>ctx.measureText(t).width))+24, hh=lines.length*17+14;
+      let bx=p.x-w/2; bx=Math.max(chart.chartArea.left, Math.min(bx, chart.width-w-4)); const by=p.y-hh-12;
+      ctx.fillStyle=ANNRED; ctx.shadowColor='rgba(0,0,0,.18)'; ctx.shadowBlur=8;
+      ctx.beginPath(); if(ctx.roundRect) ctx.roundRect(bx,by,w,hh,6); else ctx.rect(bx,by,w,hh); ctx.fill(); ctx.shadowBlur=0;
+      ctx.fillStyle='#fff'; ctx.textBaseline='top'; lines.forEach((t,j)=>ctx.fillText(t,bx+12,by+8+j*17));
+    }
+    ctx.restore();
+  },
+  afterEvent(chart,args){
+    const pts=annPts(chart); if(!pts.length) return;
+    const e=args.event; let hit=null;
+    if(e.type==='mouseout'){hit=null;} else { pts.forEach((p,k)=>{ if(Math.abs(e.x-p.x)<10 && Math.abs(e.y-(p.y-3))<12) hit=k; }); }
+    if(hit!==chart.$annHover){ chart.$annHover=hit; args.changed=true; }
+  }
+});
 const RENDERED={};
 
 function renderProp(idx){
@@ -803,10 +879,11 @@ function renderProp(idx){
   if(!d.isVista && document.getElementById('occ'+idx)){
     const act=d.occ.slice(); for(let i=12;i<act.length;i++) act[i]=null;
     const proj=d.occ.map((v,i)=> i>=11?v:null);
-    new Chart(document.getElementById('occ'+idx),{type:'line',data:{labels:occMonths,datasets:[
-      {label:'Occupancy',data:act,borderColor:accent,backgroundColor:'rgba(43,58,74,.08)',borderWidth:2.5,fill:true,tension:.3,pointRadius:3,pointBackgroundColor:accent,spanGaps:false},
-      {label:'Projected',data:proj,borderColor:accent2,borderDash:[5,4],borderWidth:2,fill:false,tension:.3,pointRadius:3,pointBackgroundColor:accent2}
-    ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}},tooltip:{callbacks:{label:c=>c.parsed.y!=null?c.dataset.label+': '+c.parsed.y.toFixed(2)+'%':''}}},scales:{y:{min:Math.max(0,Math.min(...d.occ.filter(x=>x))-8),max:100,ticks:{callback:v=>v+'%'},grid:{color:line}},x:{grid:{display:false}}}}});
+    new Chart(document.getElementById('occ'+idx),{type:'line',data:{datasets:[
+      {label:'Occupancy',data:XY(act),borderColor:accent,backgroundColor:'rgba(43,58,74,.08)',borderWidth:2.5,fill:true,tension:.3,pointRadius:3,pointBackgroundColor:accent,spanGaps:false},
+      {label:'Projected',data:XY(proj),borderColor:accent2,borderDash:[5,4],borderWidth:2,fill:false,tension:.3,pointRadius:3,pointBackgroundColor:accent2},
+      ...(ANN['occ'+idx]?[annDs]:[])
+    ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}},tooltip:{callbacks:{title:ttTitle,label:c=>c.parsed.y!=null?c.dataset.label+': '+c.parsed.y.toFixed(2)+'%':''}}},scales:{y:{min:Math.max(0,Math.min(...d.occ.filter(x=>x))-8),max:100,ticks:{callback:v=>v+'%'},grid:{color:line}},x:xLin}}});
   }
   if(!d.isVista && document.getElementById('ren'+idx)){
     const exp=d.ren.exp, pending=d.ren.pending, signed=d.ren.signed, confirmed=d.ren.confirmed, notmarked=d.ren.notmarked;
@@ -879,10 +956,11 @@ function renderSummaryCharts(){
     const po=PORTOCC;
     const act=po.portfolioStable.slice(); for(let i=12;i<act.length;i++) act[i]=null;
     const proj=po.portfolioStable.map((v,i)=> i>=11?v:null);
-    new Chart(el,{type:'line',data:{labels:po.months,datasets:[
-      {label:'Stabilized occupancy',data:act,borderColor:accent,backgroundColor:'rgba(43,58,74,.08)',borderWidth:2.5,fill:true,tension:.3,pointRadius:3,pointBackgroundColor:accent,spanGaps:false},
-      {label:'Projected',data:proj,borderColor:accent2,borderDash:[5,4],borderWidth:2,fill:false,tension:.3,pointRadius:3,pointBackgroundColor:accent2}
-    ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}},tooltip:{callbacks:{label:c=>c.parsed.y!=null?c.dataset.label+': '+c.parsed.y.toFixed(1)+'%':''}}},scales:{y:{min:86,max:96,ticks:{callback:v=>v+'%'},grid:{color:line}},x:{grid:{display:false}}}}});
+    new Chart(el,{type:'line',data:{datasets:[
+      {label:'Stabilized occupancy',data:XY(act),borderColor:accent,backgroundColor:'rgba(43,58,74,.08)',borderWidth:2.5,fill:true,tension:.3,pointRadius:3,pointBackgroundColor:accent,spanGaps:false},
+      {label:'Projected',data:XY(proj),borderColor:accent2,borderDash:[5,4],borderWidth:2,fill:false,tension:.3,pointRadius:3,pointBackgroundColor:accent2},
+      ...(ANN[el.id]?[annDs]:[])
+    ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:12,font:{size:11}}},tooltip:{callbacks:{title:ttTitle,label:c=>c.parsed.y!=null?c.dataset.label+': '+c.parsed.y.toFixed(1)+'%':''}}},scales:{y:{min:86,max:96,ticks:{callback:v=>v+'%'},grid:{color:line}},x:xLin}}});
   }
   renderPortFunnel('market','funnelMarket');
   renderPortFunnel('income','funnelIncome');
